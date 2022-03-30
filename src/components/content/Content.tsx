@@ -4,8 +4,8 @@ import { PlayList } from "../generic/PlayList";
 
 import { Slider } from "../slider/Slider";
 
-import Artists from "../artists/Artists";
-import ArtistDetail from "../artistDetail/ArtistDetail";
+import { Artists } from "../artists/Artists";
+import { ArtistDetail } from "../artistDetail/ArtistDetail";
 
 const Col = styled.div`
   padding-top: 0;

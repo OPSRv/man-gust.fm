@@ -138,4 +138,4 @@ const Artists = () => {
   );
 };
 
-export default Artists;
+export { Artists };

@@ -19,6 +19,17 @@ const VolumeRange = {
 const PlayerController = () => {
   const url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
 
+  const audioUrlList = [
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+  ];
+
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
   const [value, setValue] = useState<any>("0.5");
@@ -37,6 +48,11 @@ const PlayerController = () => {
   const togglePlay = () => setPlaying(!playing);
 
   useEffect(() => {
+    // if (!audio.paused) {
+    //   alert("audio played");
+    // }
+    console.log(audio.duration / 60, "duration");
+
     !volume ? (audio.volume = VolumeRange.min) : (audio.volume = value);
     playing ? audio.play() : audio.pause();
   }, [playing, audio, value, volume]);

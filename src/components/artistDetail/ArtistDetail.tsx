@@ -14,7 +14,7 @@ import Telegram from "../../assets/svg/social/telegram.svg";
 import Youtube from "../../assets/svg/social/youtube.svg";
 
 import BandLogo_2 from "../../assets/img/Artists/13.png";
-import YoutubeEmbed from "./YoutubeEmbed";
+import { YoutubeEmbed } from "../video/YoutubeEmbed";
 
 const ArtistDetailList = [
   {
@@ -61,4 +61,4 @@ const ArtistDetail = () => {
   );
 };
 
-export default ArtistDetail;
+export { ArtistDetail };

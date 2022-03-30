@@ -14,6 +14,7 @@ export const NowPlay = styled.div`
   height: 33%;
   box-sizing: border-box;
   padding: 2%;
+  z-index: 1000;
   p {
     font-size: calc(12px + 2 * ((100vw - 320px) / (2556 - 320)));
     @media (max-width: 1000px) {
@@ -121,6 +122,7 @@ export const VolumeControl = styled.div`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
   img {
     width: 13px;
     height: 13px;
