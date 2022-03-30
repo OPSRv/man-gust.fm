@@ -17,7 +17,7 @@ const VolumeRange = {
 };
 
 const PlayerController = () => {
-  const url = "http://www.samisite.com/sound/cropShadesofGrayMonkees.mp3";
+  const url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
 
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
