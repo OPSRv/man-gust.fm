@@ -14,6 +14,7 @@ import Telegram from "../../assets/svg/social/telegram.svg";
 import Youtube from "../../assets/svg/social/youtube.svg";
 
 import BandLogo_2 from "../../assets/img/Artists/13.png";
+import YoutubeEmbed from "./YoutubeEmbed";
 
 const ArtistDetailList = [
   {
@@ -29,30 +30,34 @@ const ArtistDetailList = [
 
 const ArtistDetail = () => {
   return (
-    <ArtistsDetailWrapper>
-      <ArtistsLogo>
-        <ArtistsLogoTextWrapper>
-          <img src={BandLogo_2} alt="" />
-          <ArtistsDetailText>
-            <h3>KLEFT</h3>
-            <p>Rivne, Ukraine</p>
-          </ArtistsDetailText>
-        </ArtistsLogoTextWrapper>
-      </ArtistsLogo>
-      <ArtistsLinkWrapper>
-        <ArtistsLink>
-          <span>Всі пісні</span>
-          <span>Сингли</span>
-          <span>Альбоми</span>
-        </ArtistsLink>
-        <ArtistsNavBar>
-          <img src={Facebook} alt="Facebook" />
-          <img src={Instagram} alt="Instagram" />
-          <img src={Telegram} alt="Telegram" />
-          <img src={Youtube} alt="Youtube" />
-        </ArtistsNavBar>
-      </ArtistsLinkWrapper>
-    </ArtistsDetailWrapper>
+    <>
+      <ArtistsDetailWrapper>
+        <ArtistsLogo>
+          <ArtistsLogoTextWrapper>
+            <img src={BandLogo_2} alt="" />
+            <ArtistsDetailText>
+              <h3>KLEFT</h3>
+              <p>Rivne, Ukraine</p>
+            </ArtistsDetailText>
+          </ArtistsLogoTextWrapper>
+        </ArtistsLogo>
+        <ArtistsLinkWrapper>
+          <ArtistsLink>
+            <span>Всі пісні</span>
+            <span>Сингли</span>
+            <span>Альбоми</span>
+            <span>Кліпи</span>
+          </ArtistsLink>
+          <ArtistsNavBar>
+            <img src={Facebook} alt="Facebook" />
+            <img src={Instagram} alt="Instagram" />
+            <img src={Telegram} alt="Telegram" />
+            <img src={Youtube} alt="Youtube" />
+          </ArtistsNavBar>
+        </ArtistsLinkWrapper>
+      </ArtistsDetailWrapper>
+      <YoutubeEmbed embedId="poNUrIBcMqg" />
+    </>
   );
 };
 

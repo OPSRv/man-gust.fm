@@ -7,7 +7,7 @@ export const ArtistsDetailWrapper = styled.div`
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-
+  z-index: 10;
   @media (max-width: 1000px) {
     top: 50px;
   }
