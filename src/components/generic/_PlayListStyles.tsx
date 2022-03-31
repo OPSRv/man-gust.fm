@@ -39,3 +39,7 @@ export const TablePlayList = styled.table`
     }
   }
 `;
+export const Cover = styled.img`
+  width: 100%;
+  max-width: 70px;
+`;

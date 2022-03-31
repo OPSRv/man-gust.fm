@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SideBar = styled.div`
-  background-color: #1a1a1a;
+  background-color: #1a1a1ac1;
   color: #f6f6f6;
   width: 35%;
   min-width: 240px;
@@ -10,11 +10,28 @@ export const SideBar = styled.div`
   flex-flow: column nowrap;
   justify-content: space-around;
   padding-left: calc(20px + (50 - 20) * ((100vw - 320px) / (2556 - 320)));
-  padding-top: 0;
+  padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
   position: sticky;
   top: 0;
   overflow-y: hidden;
   height: 100vh;
+  /* transition: 1s; */
+  @media (max-width: 1000px) {
+    flex-flow: column nowrap;
+
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+    &:hover {
+      padding-left: calc(20px + (50 - 20) * ((100vw - 320px) / (2556 - 320)));
+      padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
+      height: 100vh;
+    }
+  }
 `;
 export const MenuItemsWrapper = styled.div`
   display: flex;

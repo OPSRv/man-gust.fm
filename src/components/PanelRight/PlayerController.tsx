@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 //styled
-import { PlayerControl, VolumeControl } from "./_PanelRightStyles";
+import { PlayerControl, VolumeControl } from "./_NowPlayingStyles";
 //img
 import Back from "../../assets/svg/player/back.svg";
 import Next from "../../assets/svg/player/next.svg";
@@ -18,17 +18,6 @@ const VolumeRange = {
 
 const PlayerController = () => {
   const url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
-
-  const audioUrlList = [
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
-  ];
 
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);

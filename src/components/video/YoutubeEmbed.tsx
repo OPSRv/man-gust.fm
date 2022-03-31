@@ -1,3 +1,4 @@
+import { FC } from "react";
 import styled from "styled-components";
 
 interface IYoutubeEmbedProps {
@@ -6,18 +7,21 @@ interface IYoutubeEmbedProps {
 
 const VideoResponsive = styled.div`
   width: 100%;
-
-  min-height: 400px;
-  z-index: 2;
+  min-height: 300px;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
   iframe {
-    min-width: 320px;
+    border-radius: 5px;
+    min-width: 300px;
     min-height: 400px;
-    height: 100;
-    width: 100%;
+    height: auto;
+    width: 95%;
   }
 `;
 
-const YoutubeEmbed: React.FC<IYoutubeEmbedProps> = ({ embedId }) => (
+const YoutubeEmbed: FC<IYoutubeEmbedProps> = ({ embedId }) => (
   <VideoResponsive>
     <iframe
       src={`https://www.youtube.com/embed/${embedId}`}

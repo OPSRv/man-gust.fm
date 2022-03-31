@@ -1,5 +1,5 @@
-import { PlayListItems } from "./Mock-PlayListItems";
-import { TablePlayList } from "./_PlayListStyles";
+import { PlayListItems } from "../../fake-data/Mock-PlayListItems";
+import { TablePlayList, Cover } from "./_PlayListStyles";
 
 const PlayList = () => {
   return (
@@ -18,7 +18,7 @@ const PlayList = () => {
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>
-                <img src={item.cover} alt="cover" />
+                <Cover src={item.cover} alt="cover" />
               </td>
               <td>{item.band}</td>
               <td>{item.title}</td>

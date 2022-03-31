@@ -6,13 +6,12 @@ export const SliderWrapper = styled.div`
   align-items: center;
   justify-content: center;
   user-select: none;
-  width: 95%;
 `;
 
 export const SliderImage = styled.img`
   max-width: 1100px;
-  width: 100%;
-  /* margin: 0 auto; */
+  width: 95%;
+  margin: 0 auto;
 `;
 
 export const SliderText = styled.div`

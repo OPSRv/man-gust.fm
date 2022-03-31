@@ -11,6 +11,7 @@ export const FlexColumn = styled.div`
   justify-content: center;
   margin-top: 10px;
   color: white;
+
   h1 {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -47,6 +48,7 @@ export const PerformerItem = styled.div`
     cursor: pointer;
   }
   p {
+    color: white;
     text-align: center;
     margin: 1px 0px 1px 0px;
     font-size: calc(14px + 2 * ((100vw - 320px) / (2556 - 320)));

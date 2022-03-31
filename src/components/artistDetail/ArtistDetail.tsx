@@ -1,3 +1,4 @@
+//styles
 import {
   ArtistsDetailWrapper,
   ArtistsLogo,
@@ -8,38 +9,30 @@ import {
   ArtistsLink,
 } from "./_artistDetailStyles";
 
+//icons
 import Facebook from "../../assets/svg/social/facebook.svg";
 import Instagram from "../../assets/svg/social/instagram.svg";
 import Telegram from "../../assets/svg/social/telegram.svg";
-import Youtube from "../../assets/svg/social/youtube.svg";
+import Telephone from "../../assets/svg/social/telephone.svg";
 
-import BandLogo_2 from "../../assets/img/Artists/13.png";
+//component
 import { YoutubeEmbed } from "../video/YoutubeEmbed";
 
-const ArtistDetailList = [
-  {
-    name: "KLEFT",
-    location: "Rivne, Ukraine",
-    logo: `${BandLogo_2}`,
-    facebook: "https://www.facebook.com",
-    instagram: "https://instagram.com",
-    telegram: "https://telegram.com",
-    youtube: "https://youtube.com ",
-  },
-];
+//fake
+import { ArtistDetailList } from "../../fake-data/Mock-ArtistDetailList";
 
 const ArtistDetail = () => {
   return (
     <>
       <ArtistsDetailWrapper>
         <ArtistsLogo>
-          <ArtistsLogoTextWrapper>
-            <img src={BandLogo_2} alt="" />
+          {/* <ArtistsLogoTextWrapper>
+            <img src={ArtistDetailList.logo} alt="" />
             <ArtistsDetailText>
-              <h3>KLEFT</h3>
-              <p>Rivne, Ukraine</p>
+              <h3>{ArtistDetailList.name}</h3>
+              <p>{ArtistDetailList.location}</p>
             </ArtistsDetailText>
-          </ArtistsLogoTextWrapper>
+          </ArtistsLogoTextWrapper> */}
         </ArtistsLogo>
         <ArtistsLinkWrapper>
           <ArtistsLink>
@@ -52,10 +45,11 @@ const ArtistDetail = () => {
             <img src={Facebook} alt="Facebook" />
             <img src={Instagram} alt="Instagram" />
             <img src={Telegram} alt="Telegram" />
-            <img src={Youtube} alt="Youtube" />
+            <img src={Telephone} alt="Telephone" />
           </ArtistsNavBar>
         </ArtistsLinkWrapper>
       </ArtistsDetailWrapper>
+      <YoutubeEmbed embedId="poNUrIBcMqg" />
       <YoutubeEmbed embedId="poNUrIBcMqg" />
     </>
   );

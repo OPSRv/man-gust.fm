@@ -6,7 +6,7 @@ import {
   NowPlayingImages,
   NowWrapper,
   NameBand,
-} from "./_PanelRightStyles";
+} from "./_NowPlayingStyles";
 //img
 import NowPlayingImg from "../../assets/img/NowPlaying/nowPlayning.png";
 

@@ -31,4 +31,8 @@ html{
     letter-spacing: 1px;
     background-image: linear-gradient( to top, #110014  10%, #531d1d 100%);
   }
+  a{
+  color: white;
+  text-decoration: none;
+}
 `;
