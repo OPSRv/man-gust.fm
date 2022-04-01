@@ -20,6 +20,7 @@ export const LinksWrapper = styled.div`
   font-size: 15px;
   width: 50%;
   max-width: 500px;
+  user-select: none;
   p {
     padding: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
     color: white;
