@@ -18,9 +18,12 @@ export const LinksWrapper = styled.div`
   justify-content: space-between;
   color: white;
   font-size: 15px;
-  width: 50%;
+  width: 70%;
   max-width: 500px;
   user-select: none;
+  @media (max-width: 610px) {
+    width: 100%;
+  }
   p {
     padding: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
     color: white;
@@ -35,7 +38,10 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 50%;
+  width: 30%;
+  @media (max-width: 610px) {
+    display: none;
+  }
 `;
 export const InputSearch = styled.input`
   height: 25px;

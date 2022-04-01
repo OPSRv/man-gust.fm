@@ -26,11 +26,13 @@ const Sidebar: FC = () => {
   return (
     <>
       <SideBar>
-        <Logo>
-          <LogoIcons src={MusicLogo} alt="logo" />
-          <TextColor color={"#FF5656"}>MANGUST</TextColor>
-          <TextColor>FM</TextColor>
-        </Logo>
+        <Link to={"/"}>
+          <Logo>
+            <LogoIcons src={MusicLogo} alt="logo" />
+            <TextColor color={"#FF5656"}>MANGUST</TextColor>
+            <TextColor>FM</TextColor>
+          </Logo>
+        </Link>
         <MenuItemsWrapper>
           <MenuHeaderText>Menu</MenuHeaderText>
           {menu.map((item) => (

@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 *::-webkit-scrollbar {
     width: 7px;
+    display: none;
 }
 
 *::-webkit-scrollbar-track {
