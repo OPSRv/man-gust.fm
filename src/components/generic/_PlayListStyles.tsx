@@ -26,12 +26,14 @@ export const TablePlayList = styled.table`
       padding: 5px;
       &:nth-child(3) {
         text-align: left;
-        @media (max-width: 1000px) {
+        /* @media (max-width: 1000px) {
           display: none;
-        }
+        } */
       }
       &:nth-child(4) {
         text-align: left;
+      }
+      &:last-child {
         @media (max-width: 1000px) {
           display: none;
         }

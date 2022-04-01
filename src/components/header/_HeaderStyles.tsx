@@ -24,13 +24,21 @@ export const LinksWrapper = styled.div`
   @media (max-width: 610px) {
     width: 100%;
   }
-  p {
+
+  a {
     padding: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
     color: white;
     font-weight: 500;
-    cursor: pointer;
+    opacity: 0.8;
     &:nth-child(1) {
       padding-left: 0;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+    &:hover {
+      opacity: 1;
     }
   }
 `;

@@ -19,8 +19,8 @@ const App: React.FC = (): JSX.Element => {
   const location = useLocation();
 
   const transitions = useTransition(location.pathname, {
-    from: { opacity: 0, transition: "1s all easy" },
-    enter: { opacity: 1, transition: "1s all easy" },
+    from: { opacity: 0, transition: "1s all easy", width: "100%" },
+    enter: { opacity: 1, transition: "1s all easy", width: "100%" },
     delay: 300,
   });
 
@@ -37,7 +37,7 @@ const App: React.FC = (): JSX.Element => {
                   <Route>
                     <Route path="/" element={<Content />} />
                     <Route path="/artist" element={<Artists />} />
-                    <Route path="/artist:name" element={<ArtistDetail />} />
+                    <Route path="/artist-detail" element={<ArtistDetail />} />
                     <Route path="*" element={<NoMatch />} />
                   </Route>
                 </Routes>

@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
-function NoMatch() {
+import Image_404 from "../../assets/svg/404/404.svg";
+
+const NoMatch = () => {
   return (
-    <div style={{ height: "100vh" }}>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page of the app</Link>
-      </p>
+    <div style={{ color: "white", height: "100vh" }}>
+      <p>От халепа, тут немає чого дивитися</p>
+      <img src={Image_404} alt="" />
+      <Link to="/">Повернутися на головну</Link>
     </div>
   );
-}
+};
 
 export { NoMatch };

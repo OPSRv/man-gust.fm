@@ -59,6 +59,13 @@ export const ArtistsNavBar = styled.div`
   img {
     width: 20px;
     cursor: pointer;
+    opacity: 0.8;
+    &:active {
+      transform: scale(0.9);
+    }
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 export const ArtistsLinkWrapper = styled.div`
@@ -74,12 +81,19 @@ export const ArtistsLink = styled.div`
   justify-content: flex-start;
   width: 50%;
   align-items: center;
-  span {
+  opacity: 0.8;
+  a {
     cursor: pointer;
     font-size: calc(12px + 2 * ((100vw - 320px) / (2556 - 320)));
     margin-right: 10%;
     &:first-child {
       margin-left: 15px;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+    &:hover {
+      opacity: 1;
     }
   }
 `;

@@ -15,7 +15,7 @@ const Header = () => {
         <Link to={"/"}>Музика</Link>
         <Link to={"/"}>Подкасти</Link>
         <Link to={"/artist"}>Бібліотека</Link>
-        <Link to={"/"}>Радіо</Link>
+        <Link to={"/artist-detail"}>Радіо</Link>
       </LinksWrapper>
       <InputWrapper>
         <InputSearch type="text" />

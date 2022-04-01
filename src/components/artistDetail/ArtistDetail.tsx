@@ -20,6 +20,7 @@ import { YoutubeEmbed } from "../video/YoutubeEmbed";
 
 //fake
 import { ArtistDetailList } from "../../fake-data/Mock-ArtistDetailList";
+import { Link } from "react-router-dom";
 
 const ArtistDetail = () => {
   return (
@@ -36,19 +37,28 @@ const ArtistDetail = () => {
         </ArtistsLogo>
         <ArtistsLinkWrapper>
           <ArtistsLink>
-            <span>Всі пісні</span>
-            <span>Сингли</span>
-            <span>Альбоми</span>
-            <span>Кліпи</span>
+            <Link to={""}>Всі пісні</Link>
+            <Link to={""}>Сингли</Link>
+            <Link to={""}>Альбоми</Link>
+            <Link to={""}>Кліпи</Link>
           </ArtistsLink>
           <ArtistsNavBar>
-            <img src={Facebook} alt="Facebook" />
-            <img src={Instagram} alt="Instagram" />
-            <img src={Telegram} alt="Telegram" />
-            <img src={Telephone} alt="Telephone" />
+            <Link to={""}>
+              <img src={Facebook} alt="Facebook" />
+            </Link>
+            <Link to={""}>
+              <img src={Instagram} alt="Instagram" />
+            </Link>
+            <Link to={""}>
+              <img src={Telegram} alt="Telegram" />
+            </Link>
+            <Link to={""}>
+              <img src={Telephone} alt="Telephone" />
+            </Link>
           </ArtistsNavBar>
         </ArtistsLinkWrapper>
       </ArtistsDetailWrapper>
+
       <YoutubeEmbed embedId="poNUrIBcMqg" />
       <YoutubeEmbed embedId="poNUrIBcMqg" />
     </>
