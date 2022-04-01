@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Center = styled.div`
   display: flex;
   justify-content: center;
-  width: 95%;
+  width: 100%;
 `;
 export const FlexColumn = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const FlexColumn = styled.div`
   justify-content: center;
   margin-top: 10px;
   color: white;
-
+  width: 95%;
   h1 {
     margin-top: 40px;
     margin-bottom: 40px;

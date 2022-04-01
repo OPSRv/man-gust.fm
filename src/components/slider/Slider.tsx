@@ -2,12 +2,12 @@
 import {
   SliderWrapper,
   SliderImage,
-  SliderText,
-  FlexRow,
+  // SliderText,
+  // FlexRow,
 } from "./_SliderStyles";
 //img
 import SliderImg from "../../assets/img/Slider/slider1.png";
-import sliderIcon from "../../assets/svg/slider/sliderIcon.svg";
+// import sliderIcon from "../../assets/svg/slider/sliderIcon.svg";
 
 const Slider = () => {
   return (

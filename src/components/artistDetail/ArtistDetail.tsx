@@ -26,13 +26,13 @@ const ArtistDetail = () => {
     <>
       <ArtistsDetailWrapper>
         <ArtistsLogo>
-          {/* <ArtistsLogoTextWrapper>
+          <ArtistsLogoTextWrapper>
             <img src={ArtistDetailList.logo} alt="" />
             <ArtistsDetailText>
               <h3>{ArtistDetailList.name}</h3>
               <p>{ArtistDetailList.location}</p>
             </ArtistsDetailText>
-          </ArtistsLogoTextWrapper> */}
+          </ArtistsLogoTextWrapper>
         </ArtistsLogo>
         <ArtistsLinkWrapper>
           <ArtistsLink>

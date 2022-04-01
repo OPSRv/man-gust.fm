@@ -40,7 +40,7 @@ const PlayerController = () => {
     // if (!audio.paused) {
     //   alert("audio played");
     // }
-    console.log(audio.duration / 60, "duration");
+    // console.log(audio.duration / 60, "duration");
 
     !volume ? (audio.volume = VolumeRange.min) : (audio.volume = value);
     playing ? audio.play() : audio.pause();
