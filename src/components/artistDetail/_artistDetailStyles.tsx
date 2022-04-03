@@ -4,13 +4,6 @@ import TopLogo from "../../assets/img/Artists/ArtistDetail/logoband.jpg";
 export const ArtistsDetailWrapper = styled.div`
   width: 100%;
   color: white;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  @media (max-width: 1000px) {
-    top: 50px;
-  }
 `;
 
 export const ArtistsLogo = styled.div`
@@ -47,6 +40,15 @@ export const ArtistsDetailText = styled.div`
 `;
 export const ArtistsNavBar = styled.div`
   width: 30%;
+
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  @media (max-width: 1000px) {
+    top: 50px;
+  }
+
   @media (max-width: 1000px) {
     width: 40%;
   }
@@ -96,4 +98,8 @@ export const ArtistsLink = styled.div`
       opacity: 1;
     }
   }
+`;
+export const ArtistsDetailContent = styled.div`
+  width: 95%;
+  min-height: 100vh;
 `;

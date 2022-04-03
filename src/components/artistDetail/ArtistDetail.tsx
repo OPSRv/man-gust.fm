@@ -7,6 +7,7 @@ import {
   ArtistsNavBar,
   ArtistsLinkWrapper,
   ArtistsLink,
+  ArtistsDetailContent,
 } from "./_artistDetailStyles";
 
 //icons
@@ -16,11 +17,15 @@ import Telegram from "../../assets/svg/social/telegram.svg";
 import Telephone from "../../assets/svg/social/telephone.svg";
 
 //component
-import { YoutubeEmbed } from "../video/YoutubeEmbed";
 
 //fake
 import { ArtistDetailList } from "../../fake-data/Mock-ArtistDetailList";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import { Album } from "./Album";
+import { AllTracks } from "./AllTracks";
+import { Movies } from "./Movies";
+import { Single } from "./Single";
+import { Col } from "../content/_ContentStyles";
 
 const ArtistDetail = () => {
   return (
@@ -35,15 +40,16 @@ const ArtistDetail = () => {
             </ArtistsDetailText>
           </ArtistsLogoTextWrapper>
         </ArtistsLogo>
+
         <ArtistsLinkWrapper>
           <ArtistsLink>
-            <Link to={""}>Всі пісні</Link>
-            <Link to={""}>Сингли</Link>
-            <Link to={""}>Альбоми</Link>
-            <Link to={""}>Кліпи</Link>
+            <Link to={"/artist-detail"}>Всі пісні</Link>
+            <Link to={"single"}>Сингли</Link>
+            <Link to={"album"}>Альбоми</Link>
+            <Link to={"movies"}>Кліпи</Link>
           </ArtistsLink>
           <ArtistsNavBar>
-            <Link to={""}>
+            <Link to={"https://github.com/"}>
               <img src={Facebook} alt="Facebook" />
             </Link>
             <Link to={""}>
@@ -58,9 +64,16 @@ const ArtistDetail = () => {
           </ArtistsNavBar>
         </ArtistsLinkWrapper>
       </ArtistsDetailWrapper>
-
-      <YoutubeEmbed embedId="poNUrIBcMqg" />
-      <YoutubeEmbed embedId="poNUrIBcMqg" />
+      <Col>
+        <Routes>
+          <Route>
+            <Route index element={<AllTracks />} />
+            <Route path="/single" element={<Single />} />
+            <Route path="/album" element={<Album />} />
+            <Route path="/movies" element={<Movies />} />
+          </Route>
+        </Routes>
+      </Col>
     </>
   );
 };
