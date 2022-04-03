@@ -58,7 +58,7 @@ export const MenuItems = styled.div`
   padding: 8px 0;
 `;
 
-export const Logo = styled.div`
+export const LogoWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;

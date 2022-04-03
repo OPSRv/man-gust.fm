@@ -1,5 +1,5 @@
 import React from "react";
-import { PlayList } from "../generic/PlayList";
+import { PlayList } from "../PlayList/PlayList";
 
 const Album = () => {
   return (

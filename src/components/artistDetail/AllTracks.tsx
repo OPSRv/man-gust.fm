@@ -1,4 +1,4 @@
-import { PlayList } from "../generic/PlayList";
+import { PlayList } from "../PlayList/PlayList";
 
 const AllTracks = () => {
   return (

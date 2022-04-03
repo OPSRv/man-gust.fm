@@ -1,60 +1,18 @@
-//components
-import Content from "./components/content/Content";
-
-import { Routes, Route, useLocation } from "react-router-dom";
-import { NoMatch } from "./components/no-match/no-match";
-
-import { Artists } from "./components/artists/Artists";
-import { ArtistDetail } from "./components/artistDetail/ArtistDetail";
-
-import { useTransition, animated } from "react-spring";
-import Sidebar from "./components/sidebar/Sidebar";
-import PanelRight from "./components/PanelRight/PanelRight";
-import Header from "./components/header/Header";
+import { Sidebar } from "./components/Sidebar/Sidebar";
+import { PanelRight } from "./components/PanelRight/PanelRight";
+import { Header } from "./components/Header/Header";
 import { StyledApp } from "./_AppStyles";
-import { Col } from "./components/content/_ContentStyles";
-import ScrollToTop from "./service-function/ScrollToTop";
-import { AllTracks } from "./components/artistDetail/AllTracks";
-import { Single } from "./components/artistDetail/Single";
-import { Album } from "./components/artistDetail/Album";
-import { Movies } from "./components/artistDetail/Movies";
+import { Col } from "./components/Content/_ContentStyles";
+import { AppRoutes } from "./AppRoutes";
 
 const App: React.FC = (): JSX.Element => {
-  const location = useLocation();
-
-  const transitions = useTransition(location.pathname, {
-    from: { opacity: 1, transition: "1s all easy", width: "100%" },
-    enter: { opacity: 1, transition: "1s all easy", width: "100%" },
-    // from: { opacity: 0, transform: "translate3d(0,100%,0)", width: "100%" },
-    // enter: { opacity: 1, transform: "translate3d(0%,0,0)", width: "100%" },
-    delay: 300,
-  });
-
   return (
     <>
       <StyledApp>
         <Sidebar />
         <Col>
           <Header />
-          <ScrollToTop>
-            {transitions((props, item) => (
-              <animated.div style={props}>
-                <Routes location={item}>
-                  <Route>
-                    <Route path="/" element={<Content />} />
-                    <Route path="/artist" element={<Artists />} />
-                    <Route path="/artist-detail" element={<ArtistDetail />}>
-                      <Route index element={<AllTracks />} />
-                      <Route path="single" element={<Single />} />
-                      <Route path="album" element={<Album />} />
-                      <Route path="movies" element={<Movies />} />
-                    </Route>
-                    <Route path="*" element={<NoMatch />} />
-                  </Route>
-                </Routes>
-              </animated.div>
-            ))}
-          </ScrollToTop>
+          <AppRoutes />
         </Col>
         <PanelRight />
       </StyledApp>

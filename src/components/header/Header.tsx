@@ -1,7 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { CustomLink } from "../CustomLink";
-// import { NavLink } from "react-router-dom";
 import {
   NavBar,
   LinksWrapper,
@@ -25,4 +22,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export { Header };

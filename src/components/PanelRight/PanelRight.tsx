@@ -16,4 +16,4 @@ const PanelRight = () => {
   );
 };
 
-export default PanelRight;
+export { PanelRight };

@@ -1,6 +1,6 @@
 //components
-import { PlayList } from "../generic/PlayList";
-import { Slider } from "../slider/Slider";
+import { PlayList } from "../PlayList/PlayList";
+import { Slider } from "../Slider/Slider";
 
 const Content = () => {
   return (

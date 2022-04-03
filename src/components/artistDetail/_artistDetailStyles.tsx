@@ -15,12 +15,10 @@ export const ArtistsLogo = styled.div`
   img {
     width: 40%;
     border-radius: 50%;
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 `;
 export const ArtistsLogoTextWrapper = styled.div`
-  width: 50%;
+  width: 70%;
   display: flex;
   align-items: center;
 `;
@@ -81,7 +79,7 @@ export const ArtistsLinkWrapper = styled.div`
 export const ArtistsLink = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 50%;
+  width: 30%;
   align-items: center;
   opacity: 0.8;
   a {

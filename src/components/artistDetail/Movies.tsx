@@ -1,5 +1,5 @@
 import React from "react";
-import { YoutubeEmbed } from "../video/YoutubeEmbed";
+import { YoutubeEmbed } from "../Video/YoutubeEmbed";
 import { ArtistsDetailContent } from "./_artistDetailStyles";
 
 const Movies = () => {
