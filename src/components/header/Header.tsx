@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CustomLink } from "../CustomLink";
 // import { NavLink } from "react-router-dom";
 import {
   NavBar,
@@ -12,10 +13,10 @@ const Header = () => {
   return (
     <NavBar>
       <LinksWrapper>
-        <Link to={"/"}>Музика</Link>
-        <Link to={"/"}>Подкасти</Link>
-        <Link to={"/artist"}>Бібліотека</Link>
-        <Link to={"/artist-detail"}>Радіо</Link>
+        <CustomLink to={"/"}>Музика</CustomLink>
+        <CustomLink to={"/"}>Подкасти</CustomLink>
+        <CustomLink to={"/artist"}>Бібліотека</CustomLink>
+        <CustomLink to={"/artist-detail"}>Радіо</CustomLink>
       </LinksWrapper>
       <InputWrapper>
         <InputSearch type="text" />

@@ -20,12 +20,10 @@ import Telephone from "../../assets/svg/social/telephone.svg";
 
 //fake
 import { ArtistDetailList } from "../../fake-data/Mock-ArtistDetailList";
-import { Link, Route, Routes } from "react-router-dom";
-import { Album } from "./Album";
-import { AllTracks } from "./AllTracks";
-import { Movies } from "./Movies";
-import { Single } from "./Single";
+import { Link, NavLink, Outlet } from "react-router-dom";
+
 import { Col } from "../content/_ContentStyles";
+import { CustomLink } from "../CustomLink";
 
 const ArtistDetail = () => {
   return (
@@ -49,30 +47,23 @@ const ArtistDetail = () => {
             <Link to={"movies"}>Кліпи</Link>
           </ArtistsLink>
           <ArtistsNavBar>
-            <Link to={"https://github.com/"}>
+            <a href="https://google.com">
               <img src={Facebook} alt="Facebook" />
-            </Link>
-            <Link to={""}>
+            </a>
+            <a href="https://google.com">
               <img src={Instagram} alt="Instagram" />
-            </Link>
-            <Link to={""}>
+            </a>
+            <a href="https://google.com">
               <img src={Telegram} alt="Telegram" />
-            </Link>
-            <Link to={""}>
+            </a>
+            <a href="https://google.com">
               <img src={Telephone} alt="Telephone" />
-            </Link>
+            </a>
           </ArtistsNavBar>
         </ArtistsLinkWrapper>
       </ArtistsDetailWrapper>
       <Col>
-        <Routes>
-          <Route>
-            <Route index element={<AllTracks />} />
-            <Route path="/single" element={<Single />} />
-            <Route path="/album" element={<Album />} />
-            <Route path="/movies" element={<Movies />} />
-          </Route>
-        </Routes>
+        <Outlet />
       </Col>
     </>
   );

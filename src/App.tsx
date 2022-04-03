@@ -14,6 +14,10 @@ import Header from "./components/header/Header";
 import { StyledApp } from "./_AppStyles";
 import { Col } from "./components/content/_ContentStyles";
 import ScrollToTop from "./service-function/ScrollToTop";
+import { AllTracks } from "./components/artistDetail/AllTracks";
+import { Single } from "./components/artistDetail/Single";
+import { Album } from "./components/artistDetail/Album";
+import { Movies } from "./components/artistDetail/Movies";
 
 const App: React.FC = (): JSX.Element => {
   const location = useLocation();
@@ -39,7 +43,12 @@ const App: React.FC = (): JSX.Element => {
                   <Route>
                     <Route path="/" element={<Content />} />
                     <Route path="/artist" element={<Artists />} />
-                    <Route path="/artist-detail/*" element={<ArtistDetail />} />
+                    <Route path="/artist-detail" element={<ArtistDetail />}>
+                      <Route index element={<AllTracks />} />
+                      <Route path="single" element={<Single />} />
+                      <Route path="album" element={<Album />} />
+                      <Route path="movies" element={<Movies />} />
+                    </Route>
                     <Route path="*" element={<NoMatch />} />
                   </Route>
                 </Routes>

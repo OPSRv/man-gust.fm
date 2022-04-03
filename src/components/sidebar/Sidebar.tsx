@@ -21,26 +21,27 @@ import {
   TextColor,
 } from "./_SidebarStyles";
 import { Link } from "react-router-dom";
+import { CustomLink } from "../CustomLink";
 
 const Sidebar: FC = () => {
   return (
     <>
       <SideBar>
-        <Link to={"/"}>
+        <CustomLink to={"/"}>
           <Logo>
             <LogoIcons src={MusicLogo} alt="logo" />
             <TextColor color={"#FF5656"}>MANGUST</TextColor>
             <TextColor>FM</TextColor>
           </Logo>
-        </Link>
+        </CustomLink>
         <MenuItemsWrapper>
           <MenuHeaderText>Menu</MenuHeaderText>
           {menu.map((item) => (
             <MenuItems key={item.id}>
-              <Link to={item.url}>
+              <CustomLink to={item.url}>
                 <Icons src={item.icon} alt={item.text} />
                 <MenuText>{item.text}</MenuText>
-              </Link>
+              </CustomLink>
             </MenuItems>
           ))}
         </MenuItemsWrapper>
@@ -48,10 +49,10 @@ const Sidebar: FC = () => {
           <MenuHeaderText>Discover</MenuHeaderText>
           {discover.map((item) => (
             <MenuItems key={item.id}>
-              <Link to={item.url}>
+              <CustomLink to={item.url}>
                 <Icons src={item.icon} alt={item.text} />
                 <MenuText>{item.text}</MenuText>
-              </Link>
+              </CustomLink>
             </MenuItems>
           ))}
         </MenuItemsWrapper>
