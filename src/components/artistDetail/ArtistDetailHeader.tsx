@@ -49,7 +49,7 @@ const ArtistDetailHeader = () => {
 
         <ArtistsLinkWrapper>
           <ArtistsLink>
-            <Link to={"/artist-detail"}>Всі пісні</Link>
+            <Link to={"/detail"}>Всі пісні</Link>
             <Link to={"single"}>Сингли</Link>
             <Link to={"album"}>Альбоми</Link>
             <Link to={"movies"}>Кліпи</Link>

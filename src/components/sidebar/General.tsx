@@ -14,7 +14,7 @@ const General = () => {
       <MenuHeaderText>General</MenuHeaderText>
       {general.map((item) => (
         <MenuItems key={item.id}>
-          <CustomLink to={"artist"}>
+          <CustomLink to={item.url}>
             <Icons src={item.icon} alt={item.text} />
             <MenuText>{item.text}</MenuText>
           </CustomLink>

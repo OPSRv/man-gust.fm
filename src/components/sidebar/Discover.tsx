@@ -14,7 +14,7 @@ const Discover = () => {
       <MenuHeaderText>Discover</MenuHeaderText>
       {discover.map((item) => (
         <MenuItems key={item.id}>
-          <CustomLink to={"artist"}>
+          <CustomLink to={item.url}>
             <Icons src={item.icon} alt={item.text} />
             <MenuText>{item.text}</MenuText>
           </CustomLink>

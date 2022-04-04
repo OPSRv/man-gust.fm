@@ -46,9 +46,12 @@ export const MenuHeaderText = styled.span`
 `;
 export const MenuText = styled.span`
   font-size: calc(14px + 2 * ((100vw - 320px) / (2556 - 320)));
+  opacity: 0.8;
+  &:active {
+    transform: scale(0.9);
+  }
   &:hover {
-    cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 `;
 export const MenuItems = styled.div`

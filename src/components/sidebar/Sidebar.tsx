@@ -7,6 +7,7 @@ import { Menu } from "./Menu";
 import { Logo } from "./Logo";
 import { Discover } from "./Discover";
 import { General } from "./General";
+import { Hamburger } from "./Hamburger";
 
 const Sidebar: FC = () => {
   return (
@@ -16,6 +17,7 @@ const Sidebar: FC = () => {
       <Discover />
       <YourCollection />
       <General />
+      {/* <Hamburger /> */}
     </SideBar>
   );
 };

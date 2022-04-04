@@ -1,9 +1,9 @@
 import { CustomLink } from "../CustomLink";
 import {
-  NavBar,
-  LinksWrapper,
-  InputWrapper,
   InputSearch,
+  InputWrapper,
+  LinksWrapper,
+  NavBar,
 } from "./_HeaderStyles";
 
 const Header = () => {
@@ -11,9 +11,9 @@ const Header = () => {
     <NavBar>
       <LinksWrapper>
         <CustomLink to={"/"}>Музика</CustomLink>
-        <CustomLink to={"/"}>Подкасти</CustomLink>
+        <CustomLink to={"/podcasts"}>Подкасти</CustomLink>
         <CustomLink to={"/artist"}>Бібліотека</CustomLink>
-        <CustomLink to={"/artist-detail"}>Радіо</CustomLink>
+        <CustomLink to={"/detail"}>Радіо</CustomLink>
       </LinksWrapper>
       <InputWrapper>
         <InputSearch type="text" />
@@ -21,5 +21,4 @@ const Header = () => {
     </NavBar>
   );
 };
-
 export { Header };

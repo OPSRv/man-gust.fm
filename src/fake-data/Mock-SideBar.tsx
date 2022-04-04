@@ -64,16 +64,19 @@ export const your_collection = [
     id: 1,
     text: "Уподобання",
     icon: `${LikedSongsIcon}`,
+    url: "/liked-songs",
   },
   {
     id: 2,
     text: "Улюблені виконавці",
     icon: `${FavoriteArtistsIcon}`,
+    url: "/favorite",
   },
   {
     id: 3,
     text: "Місцеві",
     icon: `${LocalIcon}`,
+    url: "/local",
   },
 ];
 
@@ -82,10 +85,12 @@ export const general = [
     id: 1,
     text: "Налаштування",
     icon: `${SettingsIcon}`,
+    url: "/settings",
   },
   {
     id: 2,
     text: "Вийти",
     icon: `${LogOutIcon}`,
+    url: "/logout",
   },
 ];
