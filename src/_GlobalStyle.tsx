@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 * {
-
     scrollbar-width: auto;
     scrollbar-color: #531d1d #1c1c1c;
 }
@@ -35,5 +34,6 @@ html{
   a{
   color: white;
   text-decoration: none;
+  white-space: nowrap;
 }
 `;

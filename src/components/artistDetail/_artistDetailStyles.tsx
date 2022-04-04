@@ -12,6 +12,7 @@ export const ArtistsLogo = styled.div`
   justify-content: space-between;
   background: no-repeat center/100% url(${TopLogo});
   width: 100%;
+  opacity: 0.9;
   img {
     width: 40%;
     border-radius: 50%;
@@ -38,11 +39,13 @@ export const ArtistsDetailText = styled.div`
 `;
 export const ArtistsNavBar = styled.div`
   width: 30%;
-
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
   z-index: 10;
+
+  white-space: nowrap;
+
   @media (max-width: 1000px) {
     top: 50px;
   }
@@ -51,7 +54,7 @@ export const ArtistsNavBar = styled.div`
     width: 40%;
   }
   height: 35px;
-  background: #49494942;
+
   align-self: flex-end;
   display: flex;
   justify-content: space-around;
@@ -73,7 +76,9 @@ export const ArtistsLinkWrapper = styled.div`
   height: 35px;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(to top, #351212d3 0%, #531d1dcc 100%);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(153, 23, 23, 0.306);
+  backdrop-filter: blur(5px);
   margin-bottom: 30px;
 `;
 export const ArtistsLink = styled.div`

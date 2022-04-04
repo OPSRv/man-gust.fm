@@ -7,7 +7,7 @@ const ExternalLink = ({ children, to, ...props }) => {
             rel="noreferrer"
         >
             {children}
-        </a>
+        </a >
     );
 };
 

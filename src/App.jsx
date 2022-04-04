@@ -11,10 +11,10 @@ export const StyledApp = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-    background: linear-gradient(
-    20deg,
-    hsl(${(props) => props.hue}, 60%, 65%),
-    hsl(${(props) => props.hue - 305}, 64%, 60%)
+  background: linear-gradient(
+    to top,
+    hsl(${(props) => props.hue}, 90%, 65%),
+    hsl(${(props) => props.hue - 105}, 14%, 25%)
   );
   @media (max-width: 1000px) {
     flex-flow: column nowrap;
@@ -23,23 +23,24 @@ export const StyledApp = styled.div`
 
 const RangeInput = styled.input.attrs({
   type: "range",
-  width: "100%",
 })``;
 
 const App = () => {
-  const [hue, setHue] = useState(240);
-
+  const [hue, setHue] = useState(314);
+  console.log(hue)
   return (
     <>
       <StyledApp hue={hue}>
         <Sidebar />
         <Col>
+
           <RangeInput
             value={hue}
             onChange={(e) => setHue(e.target.value)}
             min="0"
             max="360"
           />
+
           <Header />
           <AppRoutes />
         </Col>

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const SideBar = styled.div`
-  background-color: #1a1a1ac1;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(153, 23, 23, 0.484);
+  backdrop-filter: blur(5px);
   color: #f6f6f6;
   width: 15%;
   min-width: 250px;
