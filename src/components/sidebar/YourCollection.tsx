@@ -13,12 +13,12 @@ const YourCollection = () => {
     <MenuItemsWrapper>
       <MenuHeaderText>Your collection</MenuHeaderText>
       {your_collection.map((item) => (
-        <MenuItems key={item.id}>
-          <CustomLink to={item.url}>
+        <CustomLink to={item.url} key={item.id}>
+          <MenuItems>
             <Icons src={item.icon} alt={item.text} />
             <MenuText>{item.text}</MenuText>
-          </CustomLink>
-        </MenuItems>
+          </MenuItems>
+        </CustomLink>
       ))}
     </MenuItemsWrapper>
   );

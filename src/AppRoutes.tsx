@@ -45,27 +45,16 @@ const AppRoutes = () => {
                   <Route path="album" element={<Album />} />
                   <Route path="movies" element={<Movies />} />
                 </Route>
-
-                <Route path="/daily-mix" element={<DailyMix />} />
-
-                <Route path="/discover" element={<Discover />} />
-
-                <Route path="/favorite" element={<FavoriteArtists />} />
-
-                <Route path="/library" element={<Library />} />
-
-                <Route path="/liked-songs" element={<LikedSongs />} />
-
-                <Route path="/local" element={<Local />} />
-
-                <Route path="/playlists" element={<PlaylistsAdmin />} />
-
-                <Route path="/podcasts" element={<Podcasts />} />
-
-                <Route path="/settings" element={<Settings />} />
-
                 <Route path="/trends" element={<Trends />} />
-
+                <Route path="/library" element={<Library />} />
+                <Route path="/discover" element={<Discover />} />
+                <Route path="/playlists" element={<PlaylistsAdmin />} />
+                <Route path="/podcasts" element={<Podcasts />} />
+                <Route path="/daily-mix" element={<DailyMix />} />
+                <Route path="/liked-songs" element={<LikedSongs />} />
+                <Route path="/favorite" element={<FavoriteArtists />} />
+                <Route path="/local" element={<Local />} />
+                <Route path="/settings" element={<Settings />} />
                 <Route path="*" element={<NoMatch />} />
               </Route>
             </Routes>

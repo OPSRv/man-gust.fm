@@ -16,6 +16,7 @@ export const SideBar = styled.div`
   overflow-y: hidden;
   height: 100vh;
   /* transition: 1s; */
+
   @media (max-width: 1000px) {
     flex-flow: column nowrap;
 
@@ -36,6 +37,17 @@ export const SideBar = styled.div`
 export const MenuItemsWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
+  a {
+    span {
+      opacity: 0.8;
+      &:active {
+        transform: scale(0.9);
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 `;
 
 export const MenuHeaderText = styled.span`
@@ -46,13 +58,6 @@ export const MenuHeaderText = styled.span`
 `;
 export const MenuText = styled.span`
   font-size: calc(14px + 2 * ((100vw - 320px) / (2556 - 320)));
-  opacity: 0.8;
-  &:active {
-    transform: scale(0.9);
-  }
-  &:hover {
-    opacity: 0.8;
-  }
 `;
 export const MenuItems = styled.div`
   display: flex;

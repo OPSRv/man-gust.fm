@@ -30,7 +30,7 @@ html{
     font-style: normal;
     font-weight: 300;
     letter-spacing: 1px;
-    background-image: linear-gradient( to top, #110014  10%, #531d1d 100%);
+    background: linear-gradient( to top, #110014  10%, #531d1d 100%);
   }
   a{
   color: white;
