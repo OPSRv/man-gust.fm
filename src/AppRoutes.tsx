@@ -33,33 +33,35 @@ const AppRoutes = () => {
   return (
     <>
       <ScrollToTop>
-        {transitions((props, item) => (
+        {/* {transitions((props, item) => (
           <animated.div style={props}>
-            <Routes location={item}>
-              <Route>
-                <Route path="/" element={<Content />} />
-                <Route path="/artist" element={<Artists />} />
-                <Route path="/detail" element={<ArtistDetail />}>
-                  <Route index element={<AllTracks />} />
-                  <Route path="single" element={<Single />} />
-                  <Route path="album" element={<Album />} />
-                  <Route path="movies" element={<Movies />} />
-                </Route>
-                <Route path="/trends" element={<Trends />} />
-                <Route path="/library" element={<Library />} />
-                <Route path="/discover" element={<Discover />} />
-                <Route path="/playlists" element={<PlaylistsAdmin />} />
-                <Route path="/podcasts" element={<Podcasts />} />
-                <Route path="/daily-mix" element={<DailyMix />} />
-                <Route path="/liked-songs" element={<LikedSongs />} />
-                <Route path="/favorite" element={<FavoriteArtists />} />
-                <Route path="/local" element={<Local />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="*" element={<NoMatch />} />
-              </Route>
-            </Routes>
+
           </animated.div>
-        ))}
+        ))} */}
+
+        <Routes>
+          <Route>
+            <Route path="/" element={<Content />} />
+            <Route path="/artist" element={<Artists />} />
+            <Route path="/detail" element={<ArtistDetail />}>
+              <Route index element={<AllTracks />} />
+              <Route path="single" element={<Single />} />
+              <Route path="album" element={<Album />} />
+              <Route path="movies" element={<Movies />} />
+            </Route>
+            <Route path="/trends" element={<Trends />} />
+            <Route path="/library" element={<Library />} />
+            <Route path="/discover" element={<Discover />} />
+            <Route path="/playlists" element={<PlaylistsAdmin />} />
+            <Route path="/podcasts" element={<Podcasts />} />
+            <Route path="/daily-mix" element={<DailyMix />} />
+            <Route path="/liked-songs" element={<LikedSongs />} />
+            <Route path="/favorite" element={<FavoriteArtists />} />
+            <Route path="/local" element={<Local />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="*" element={<NoMatch />} />
+          </Route>
+        </Routes>
       </ScrollToTop>
     </>
   );

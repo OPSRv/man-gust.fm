@@ -33,14 +33,12 @@ const App = () => {
       <StyledApp hue={hue}>
         <Sidebar />
         <Col>
-
           <RangeInput
             value={hue}
             onChange={(e) => setHue(e.target.value)}
             min="0"
             max="360"
           />
-
           <Header />
           <AppRoutes />
         </Col>
