@@ -43,20 +43,18 @@ export const ArtistsNavBar = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
-
-  @media (max-width: 1000px) {
-    top: 50px;
-  }
-
-  @media (max-width: 1000px) {
-    width: 40%;
-  }
   height: 35px;
-
   align-self: flex-end;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 1000px) {
+    top: 50px;
+  }
+  @media (max-width: 1000px) {
+    width: 40%;
+  }
   img {
     width: 20px;
     cursor: pointer;
