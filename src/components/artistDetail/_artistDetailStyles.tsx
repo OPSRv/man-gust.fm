@@ -44,8 +44,6 @@ export const ArtistsNavBar = styled.div`
   top: 0;
   z-index: 10;
 
-  white-space: nowrap;
-
   @media (max-width: 1000px) {
     top: 50px;
   }
