@@ -86,15 +86,15 @@ export default [
   },
 ];
 
-import React, { useState } from "react";
-import {
-  useTransition,
-  useSpring,
-  useChain,
-  config,
-  animated,
-  useSpringRef,
-} from "@react-spring/web";
+// import React, { useState } from "react";
+// import {
+//   useTransition,
+//   useSpring,
+//   useChain,
+//   config,
+//   animated,
+//   useSpringRef,
+// } from "@react-spring/web";
 
 // import data from "./data";
 // import styles from "./styles.module.css";

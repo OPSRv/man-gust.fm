@@ -10,6 +10,7 @@ import { AllTracks } from "./components/ArtistDetail/AllTracks";
 import { Single } from "./components/ArtistDetail/Single";
 import { Album } from "./components/ArtistDetail/Album";
 import { Movies } from "./components/ArtistDetail/Movies";
+//pages
 import { DailyMix } from "./pages/DailyMix";
 import { Discover } from "./pages/Discover";
 import { FavoriteArtists } from "./pages/FavoriteArtists";

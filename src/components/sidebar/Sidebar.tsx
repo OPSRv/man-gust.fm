@@ -1,4 +1,3 @@
-import { FC } from "react";
 //styles
 import { SideBar } from "./_SidebarStyles";
 //components
@@ -7,9 +6,9 @@ import { Menu } from "./Menu";
 import { Logo } from "./Logo";
 import { Discover } from "./Discover";
 import { General } from "./General";
-import { Hamburger } from "./Hamburger";
+// import { Hamburger } from "./Hamburger";
 
-const Sidebar: FC = () => {
+const Sidebar = () => {
   return (
     <SideBar>
       <Logo />
