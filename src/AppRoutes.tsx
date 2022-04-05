@@ -1,6 +1,6 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+// import { useTransition, animated } from "react-spring";
 import ScrollToTop from "./service-function/ScrollToTop";
-import { useTransition, animated } from "react-spring";
 //components
 import Content from "./components/Content/Content";
 import { NoMatch } from "./components/NoMatch/NoMatch";
@@ -22,13 +22,13 @@ import { Settings } from "./pages/Settings";
 import { Trends } from "./pages/Trends";
 
 const AppRoutes = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
-  const transitions = useTransition(location.pathname, {
-    from: { opacity: 1, transition: "1s all easy", width: "100%" },
-    enter: { opacity: 1, transition: "1s all easy", width: "100%" },
-    delay: 300,
-  });
+  // const transitions = useTransition(location.pathname, {
+  //   from: { opacity: 1, transition: "1s all easy", width: "100%" },
+  //   enter: { opacity: 1, transition: "1s all easy", width: "100%" },
+  //   delay: 300,
+  // });
 
   return (
     <>
