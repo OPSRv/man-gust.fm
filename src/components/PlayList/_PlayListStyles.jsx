@@ -16,7 +16,7 @@ export const TablePlayList = styled.table`
     :not(:first-child) {
       &:hover {
         margin-left: -4px;
-        background-color: #520000;
+        background-color: #52000045;
       }
     }
     td {

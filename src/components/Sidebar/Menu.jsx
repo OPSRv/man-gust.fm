@@ -15,7 +15,7 @@ const Menu = () => {
       {menu.map((item) => (
         <CustomLink to={item.url} key={item.id}>
           <MenuItems>
-            <Icons src={item.icon} alt={item.text} />
+            <Icons src={item.icon} alt={item.text} styles={{ fill: "green" }} />
             <MenuText>{item.text}</MenuText>
           </MenuItems>
         </CustomLink>

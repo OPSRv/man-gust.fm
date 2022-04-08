@@ -1,14 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { Col } from "../Content/_ContentStyles";
 import { ArtistDetailHeader } from "./ArtistDetailHeader";
-
+import { Container } from '../../_GlobalStyle'
 const ArtistDetail = () => {
   return (
     <>
       <ArtistDetailHeader />
-      <Col>
+      <Container>
         <Outlet />
-      </Col>
+      </Container>
     </>
   );
 };

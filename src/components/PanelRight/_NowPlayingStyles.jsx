@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NowPlay = styled.div`
   user-select: none;
-  background-color: #6b0000;
+  background-color: #4f4e4e4f;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -15,6 +15,7 @@ export const NowPlay = styled.div`
   box-sizing: border-box;
   padding: 2%;
   z-index: 3;
+
   p {
     font-size: calc(12px + 2 * ((100vw - 320px) / (2556 - 320)));
     @media (max-width: 1000px) {
