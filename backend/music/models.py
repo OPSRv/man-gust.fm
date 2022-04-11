@@ -72,8 +72,31 @@ class Song(models.Model):
         verbose_name_plural = "Пісні"
 
     def __str__(self):
-        # Повертає назву виконавця та назву пісні
         return self.artist.name + ' - ' + self.name
+
+
+def album_image_directory_path(instance, filename):
+    return f'music_band/{instance.artist.name}/songs/album/{instance.name}/{filename}'.format(filename=filename)
+
+
+class Album(models.Model):
+    name = models.CharField(max_length=100, blank=False,
+                            default='', verbose_name="Назва альбому")
+    artist = models.ForeignKey(
+        MusicBand, blank=False, on_delete=models.CASCADE, verbose_name="Виконавець")
+    album_image = models.ImageField(
+        upload_to=album_image_directory_path, blank=False, verbose_name="Обкладинка альбому", )
+    song = models.ManyToManyField(
+        Song, blank=True, verbose_name="Пісні", related_name='+')
+    is_published = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['id']
+        verbose_name = "Альбом"
+        verbose_name_plural = "Альбоми"
+
+    def __str__(self):
+        return self.name
 
 
 def playList_directory_path(instance, filename):
