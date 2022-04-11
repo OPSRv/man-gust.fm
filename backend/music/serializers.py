@@ -16,7 +16,7 @@ class MusicBandSerializerDetail(serializers.ModelSerializer):
 
 
 class SongsSerializer(serializers.ModelSerializer):
-    artist = MusicBandSerializer(read_only=True, many=True)
+    artist = MusicBandSerializer(read_only=True)
 
     class Meta:
         model = Song
@@ -24,6 +24,8 @@ class SongsSerializer(serializers.ModelSerializer):
 
 
 class SongSerializerDetail(serializers.ModelSerializer):
+    artist = MusicBandSerializer(read_only=True, many=True)
+
     class Meta:
         model = Song
         fields = '__all__'
