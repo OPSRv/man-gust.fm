@@ -1,0 +1,7 @@
+/media
+/env
+/__pycache__
+/static
+backend/media
+frontend/node_modules
+backend/radio_data
