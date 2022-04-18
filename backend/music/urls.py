@@ -1,24 +1,15 @@
-
-# from django.urls import include, path
-# from rest_framework import routers
-# from . import views
-
-# router = routers.DefaultRouter()
-# router.register(r'musicbands', views.MusicBandViewSet, basename="musicbands")
-# router.register(r'songs', views.SongsViewSet, basename="songs")
-# router.register(r'playlists', views.PlayListViewSet, basename="playlists")
-
-# urlpatterns = [
-#     path('api/', include(router.urls)),
-# ]
-
+from rest_framework import routers
 
 from . import views
-from rest_framework import routers
 
 router = routers.SimpleRouter()
 router.register(r'musicbands', views.MusicBandViewSet, basename="musicbands")
-router.register(r'songs', views.SongsViewSet, basename="songs")
+router.register(r'musicband_like', views.MusicBandLikedViewSet,
+                basename="musicband_like")
+router.register(r'song', views.SongViewSet, basename="song")
+router.register(r'song_like', views.SongLikedSet, basename="song_like")
 router.register(r'album', views.AlbumViewSet, basename="album")
-router.register(r'playlists', views.PlayListViewSet, basename="playlists")
+# router.register(r'playlists', views.PlayListViewSet, basename="playlists")
+router.register(r'photo', views.PhotoViewSet, basename="photo")
+router.register(r'video', views.VideoViewSet, basename="video")
 urlpatterns = router.urls

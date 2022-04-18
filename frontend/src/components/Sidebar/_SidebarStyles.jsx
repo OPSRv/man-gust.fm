@@ -11,7 +11,8 @@ export const SideBar = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  padding-left: calc(20px + (50 - 20) * ((100vw - 320px) / (2556 - 320)));
+  padding-left: calc(10px + (50 - 20) * ((100vw - 320px) / (2556 - 320)));
+  padding-right: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
   padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (2556 - 320)));
   position: sticky;
   top: 0;
@@ -85,4 +86,5 @@ export const Icons = styled.img`
 export const TextColor = styled.span`
   color: ${(props) => props.color || "white"};
   font-size: calc(25px + 4 * ((100vw - 320px) / (2556 - 320)));
+  font-weight: 400;
 `;

@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Slider(models.Model):
     link = models.CharField(max_length=256, blank=True, default='')
@@ -18,4 +16,4 @@ class Slider(models.Model):
     class Meta:
         ordering = ['id']
         verbose_name = "Слайдер"
-        verbose_name_plural = "Слайдери"
+        verbose_name_plural = "Слайдер"

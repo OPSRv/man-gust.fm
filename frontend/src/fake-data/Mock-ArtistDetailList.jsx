@@ -8,4 +8,8 @@ export const ArtistDetailList = {
   instagram: "https://instagram.com",
   telegram: "https://telegram.com",
   youtube: "https://youtube.com ",
+  soundcloud: "https://soundcloud.com ",
+  itunes: "https://itunes.com ",
+  spotify: "https://spotify.com ",
+  bandcamp: "https://bandcamp.com",
 };

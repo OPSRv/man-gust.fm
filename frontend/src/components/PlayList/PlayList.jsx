@@ -1,10 +1,16 @@
 import { PlayListItems } from "../../fake-data/Mock-PlayListItems";
-import { TablePlayList, Cover } from "./_PlayListStyles";
+import { TablePlayList, Cover, TableHeaderWrapper } from "./_PlayListStyles";
+import Like from "../../assets/svg/other/like.svg";
+import UnLike from "../../assets/svg/other/unlike.svg";
 
 const PlayList = () => {
   return (
     <>
       <TablePlayList>
+        <TableHeaderWrapper>
+          <h1>Пісні</h1>
+        </TableHeaderWrapper>
+
         <tbody>
           <tr>
             <td>#</td>
@@ -12,7 +18,7 @@ const PlayList = () => {
             <td>Виконавець</td>
             <td>Назва пісні</td>
             <td>Тривалість</td>
-            <td>Прослухано</td>
+            <td>Вподобання</td>
           </tr>
           {PlayListItems.map((item) => (
             <tr key={item.id}>
@@ -23,7 +29,9 @@ const PlayList = () => {
               <td>{item.band}</td>
               <td>{item.title}</td>
               <td>{item.time}</td>
-              <td>{item.playing}</td>
+              <td>
+                <img src={UnLike} alt="" />
+              </td>
             </tr>
           ))}
         </tbody>

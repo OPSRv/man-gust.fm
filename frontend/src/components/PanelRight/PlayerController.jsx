@@ -17,7 +17,8 @@ const VolumeRange = {
 };
 
 const PlayerController = () => {
-  const url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+  const url =
+    "http://127.0.0.1:8000/media/music_band/KLEFT/songs/%D0%A2%D0%B5%D0%BC%D0%BD%D0%BE/01_-_MellRose_-_Temno.mp3";
 
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);

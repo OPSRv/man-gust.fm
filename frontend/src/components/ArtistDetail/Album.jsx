@@ -4,7 +4,6 @@ import { PlayList } from "../PlayList/PlayList";
 const Album = () => {
   return (
     <>
-      <h1>Album</h1>
       <PlayList />
     </>
   );

@@ -10,6 +10,8 @@ import { AllTracks } from "./components/ArtistDetail/AllTracks";
 import { Single } from "./components/ArtistDetail/Single";
 import { Album } from "./components/ArtistDetail/Album";
 import { Movies } from "./components/ArtistDetail/Movies";
+import { PhotoGallery } from "./components/ArtistDetail/PhotoGallery";
+
 //pages
 import { DailyMix } from "./pages/DailyMix";
 import { Discover } from "./pages/Discover";
@@ -44,11 +46,12 @@ const AppRoutes = () => {
           <Route>
             <Route path="/" element={<Content />} />
             <Route path="/artist" element={<Artists />} />
-            <Route path="/detail" element={<ArtistDetail />}>
+            <Route path="/artist/:name" element={<ArtistDetail />}>
               <Route index element={<AllTracks />} />
               <Route path="single" element={<Single />} />
               <Route path="album" element={<Album />} />
               <Route path="movies" element={<Movies />} />
+              <Route path="gallery" element={<PhotoGallery />} />
             </Route>
             <Route path="/trends" element={<Trends />} />
             <Route path="/library" element={<Library />} />

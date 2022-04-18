@@ -26,7 +26,7 @@ html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-     font-family: 'Roboto';
+    font-family: 'Comfortaa';
     font-style: normal;
     font-weight: 300;
     letter-spacing: 1px;
@@ -45,4 +45,5 @@ export const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  min-height: 100vh;
 `;

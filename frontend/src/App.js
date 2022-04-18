@@ -38,43 +38,52 @@ export const ThemeWrapper = styled.div`
 export const ThemeCircle = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   background: ${(props) => props.background};
   border-radius: 50%;
-  height: 15px;
-  width: 15px;
+  height: 45px;
+  width: 45px;
   margin: 5px;
+  color: #eee;
   cursor: pointer;
+  span {
+    background: #00000055;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
 `;
 
 const App = () => {
   const [ToogleTheme, setToogleTheme] = useState(
-    "linear-gradient( to top, #110014  10%, #531d1d 100%)"
+    "linear-gradient(to top,#28aeae 0%,#330867 100%)"
   );
-  const [hue, setHue] = useState(314);
+
   return (
     <>
-      <StyledApp hue={hue} background={ToogleTheme}>
+      <StyledApp background={ToogleTheme}>
         <Sidebar />
         <Container>
-          <ThemeWrapper>
+          {/* <ThemeWrapper>
             {ThemeData.map((item) => (
               <ThemeCircle
                 key={item.id}
                 dataset={item.id}
                 background={item.css}
                 onClick={(e) => setToogleTheme(item.css)}
-              ></ThemeCircle>
+              >
+                <span>{item.id}</span>
+              </ThemeCircle>
             ))}
-          </ThemeWrapper>
-          <RangeInput
-            type="range"
-            value={hue}
-            onChange={(e) => setHue(e.target.value)}
-            min="0"
-            max="360"
-            step="1"
-          />
+          </ThemeWrapper> */}
+
           <Header />
           <AppRoutes />
         </Container>

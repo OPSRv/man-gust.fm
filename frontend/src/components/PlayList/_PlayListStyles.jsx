@@ -9,6 +9,7 @@ export const TablePlayList = styled.table`
   font-size: calc(12px + 4 * ((100vw - 320px) / (2556 - 320)));
   user-select: none;
   color: white;
+
   tr {
     text-align: center;
     height: 58px;
@@ -16,7 +17,7 @@ export const TablePlayList = styled.table`
     :not(:first-child) {
       &:hover {
         margin-left: -4px;
-        background-color: #52000045;
+        background-color: #00000045;
       }
     }
     td {
@@ -41,7 +42,19 @@ export const TablePlayList = styled.table`
     }
   }
 `;
+
+export const TableHeaderWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  h1 {
+    display: inline-block;
+    margin-left: 15%;
+  }
+`;
+
 export const Cover = styled.img`
   width: 100%;
   max-width: 70px;
+  border-radius: 2px;
 `;

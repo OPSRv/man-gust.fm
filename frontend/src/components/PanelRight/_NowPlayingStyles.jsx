@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NowPlay = styled.div`
   user-select: none;
-  background-color: #4f4e4e4f;
+  background-color: #24242464;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -100,7 +100,7 @@ export const PlayerControl = styled.div`
   span {
     width: 31px;
     height: 31px;
-    background: #480000;
+    background: #666666ab;
     border-radius: 10px;
     display: flex;
     align-items: center;
