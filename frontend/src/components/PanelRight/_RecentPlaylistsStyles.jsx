@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React from "react";
 export const RecentPlaylistsWrapper = styled.div`
   width: 100%;
   @media (max-width: 1000px) {

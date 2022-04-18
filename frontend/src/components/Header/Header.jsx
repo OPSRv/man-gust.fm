@@ -6,11 +6,11 @@ import {
   LinksWrapper,
   NavBar,
 } from "./_HeaderStyles";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const Header = () => {
-  const location = useLocation();
-  console.log(location.pathname);
+  // const location = useLocation();
+  // console.log(location.pathname);
 
   // const history = useHistory();
 

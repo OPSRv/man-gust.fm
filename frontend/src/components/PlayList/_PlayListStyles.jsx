@@ -43,7 +43,7 @@ export const TablePlayList = styled.table`
   }
 `;
 
-export const TableHeaderWrapper = styled.div`
+export const TableHeaderWrapper = styled.span`
   width: 100%;
   display: flex;
   justify-content: center;
