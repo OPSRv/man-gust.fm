@@ -1,9 +1,5 @@
-import { FC } from "react";
+import React from "react";
 import styled from "styled-components";
-
-interface IYoutubeEmbedProps {
-  embedId: string;
-}
 
 const VideoResponsive = styled.div`
   width: 100%;
@@ -21,7 +17,7 @@ const VideoResponsive = styled.div`
   }
 `;
 
-const YoutubeEmbed: FC<IYoutubeEmbedProps> = ({ embedId }) => (
+const YoutubeEmbed = ({ embedId }) => (
   <VideoResponsive>
     <iframe
       src={`https://www.youtube.com/embed/${embedId}`}

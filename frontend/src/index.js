@@ -1,24 +1,22 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
 //styled
 import "./assets/css/general.css";
 import { GlobalStyle } from "./_GlobalStyle";
 import { BrowserRouter } from "react-router-dom";
 
-const root = createRoot(document.getElementById('root'));
-
-
-
+const root = createRoot(document.getElementById("root"));
 
 root.render(
-
-    <React.StrictMode>
-        <BrowserRouter>
-            <App /> <GlobalStyle />
-        </BrowserRouter></React.StrictMode>);
+  <React.StrictMode>
+    <BrowserRouter>
+      <App /> <GlobalStyle />
+    </BrowserRouter>
+  </React.StrictMode>
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

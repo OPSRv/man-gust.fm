@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 // import { useTransition, animated } from "react-spring";
 import ScrollToTop from "./service-function/ScrollToTop";
@@ -11,7 +12,6 @@ import { Single } from "./components/ArtistDetail/Single";
 import { Album } from "./components/ArtistDetail/Album";
 import { Movies } from "./components/ArtistDetail/Movies";
 import { PhotoGallery } from "./components/ArtistDetail/PhotoGallery";
-
 //pages
 import { DailyMix } from "./pages/DailyMix";
 import { Discover } from "./pages/Discover";

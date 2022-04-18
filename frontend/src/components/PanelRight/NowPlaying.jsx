@@ -1,3 +1,4 @@
+import React from "react";
 //components
 import PlayerController from "./PlayerController";
 //styled

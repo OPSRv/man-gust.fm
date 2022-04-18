@@ -1,3 +1,4 @@
+import React from "react";
 import { Notifications } from "./Notifications";
 import { RecentPlaylist } from "./RecentPlaylist";
 import { NowPlaying } from "./NowPlaying";

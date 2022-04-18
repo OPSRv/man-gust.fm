@@ -1,3 +1,4 @@
+import React from "react";
 import { PlayListItems } from "../../fake-data/Mock-PlayListItems";
 import { TablePlayList, Cover, TableHeaderWrapper } from "./_PlayListStyles";
 import Like from "../../assets/svg/other/like.svg";

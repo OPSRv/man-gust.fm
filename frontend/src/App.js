@@ -1,3 +1,4 @@
+import React from "react";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { PanelRight } from "./components/PanelRight/PanelRight";
 import { Header } from "./components/Header/Header";

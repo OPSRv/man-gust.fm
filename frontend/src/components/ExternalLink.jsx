@@ -1,14 +1,10 @@
+import React from "react";
 const ExternalLink = ({ children, to, ...props }) => {
-    return (
-        <a
-            href={to}
-            {...props}
-            target="_blank"
-            rel="noreferrer"
-        >
-            {children}
-        </a >
-    );
+  return (
+    <a href={to} {...props} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  );
 };
 
 export { ExternalLink };

@@ -1,3 +1,4 @@
+import React from "react";
 import { CustomLink } from "../CustomLink";
 import { LogoIcons, LogoWrapper, TextColor } from "./_SidebarStyles";
 import MusicLogo from "../../assets/svg/other/music.svg";

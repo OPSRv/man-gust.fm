@@ -1,3 +1,4 @@
+import React from "react";
 //components
 import { PlayList } from "../PlayList/PlayList";
 import { Slider } from "../Slider/Slider";

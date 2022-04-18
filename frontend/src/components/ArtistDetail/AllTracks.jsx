@@ -2,7 +2,7 @@ import { PlayList } from "../PlayList/PlayList";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-
+import React from "react";
 const AllTracks = () => {
   const location = useLocation();
   console.log(location.pathname);

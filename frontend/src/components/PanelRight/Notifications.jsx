@@ -1,3 +1,4 @@
+import React from "react";
 //fake
 import { NotificationsList } from "../../fake-data/Mock-NotificationsList";
 //styles

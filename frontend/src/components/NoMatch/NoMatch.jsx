@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Image_404 from "../../assets/svg/404/404.svg";
