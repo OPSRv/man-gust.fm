@@ -5,7 +5,7 @@ import { Header } from "./components/Header/Header";
 import { PanelRight } from "./components/PanelRight/PanelRight";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Container } from "./_GlobalStyle";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectCount } from "./store/reducers/musicBandSlice";
 
 const App = () => {

@@ -39,7 +39,7 @@ class MusicBandAdmin(admin.ModelAdmin):
         }),
         ('Контакти', {
             'fields': ('mobile_number',
-                       'email_band',
+                       'email_band','is_published'
                        )
         }),
     )

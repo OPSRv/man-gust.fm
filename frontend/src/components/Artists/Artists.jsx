@@ -1,37 +1,35 @@
 import React from "react";
-import {
-  FlexColumn,
-  ItemWrapper,
-  PerformerItem,
-  Center,
-} from "./_ArtistsStyles";
-
-import { Link } from "react-router-dom";
-// import { useState } from "react";
-// import { Spinner } from "../Spiner/Spiner";
+import { musicBandAPI } from "../../service-function/musicBandService";
+import { Spinner } from "../Spiner/Spiner";
+import { ArtistItem } from "./ArtistItem";
+import { Center, FlexColumn, ItemWrapper } from "./_ArtistsStyles";
 
 const Artists = () => {
-  // const [loading, setLoading] = useState(true);
-  // const [artistsList, setArtistsList] = useState([]);
-  const artistsList = [];
+  const {
+    data: musicbands,
+    error,
+    isLoading,
+    refetch,
+  } = musicBandAPI.useGetMusicBandsQuery();
+
   return (
     <>
       <Center>
         <FlexColumn>
           <h1>Виконавці</h1>
-          {/* {loading && <Spinner />}
-          {!loading && ( */}
+          {isLoading && <Spinner />}
+          {error && (
+            <div>
+              виникла помилка
+              <button onClick={() => refetch()}>Спробувати ще раз</button>
+            </div>
+          )}
           <ItemWrapper>
-            {artistsList.map((item) => (
-              <Link to={`${item.name}`} key={item.id}>
-                <PerformerItem>
-                  <img src={item.logo} alt={item.name} />
-                  <p>{item.name}</p>{" "}
-                </PerformerItem>
-              </Link>
-            ))}
+            {musicbands &&
+              musicbands.map((musicband) => (
+                <ArtistItem musicband={musicband} key={musicband.id} />
+              ))}
           </ItemWrapper>
-          {/* )} */}
         </FlexColumn>
       </Center>
     </>
