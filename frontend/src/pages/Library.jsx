@@ -7,4 +7,4 @@ const Library = () => {
   );
 };
 
-export { Library };
+export default Library;

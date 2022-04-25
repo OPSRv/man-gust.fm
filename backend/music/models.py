@@ -1,7 +1,9 @@
 import time
 
+import PIL as pillow
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericRelation
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.forms import JSONField
 from likes.models import Like
@@ -9,17 +11,17 @@ from mutagen.mp3 import MP3
 
 
 def logo_directory_path(instance, filename):
-    return f'music_band/{instance.name}/logo/{filename}'.format(filename=filename)
+    return f'music_band/{instance.musicband_name}/logo/{filename}'.format(filename=filename)
 
 
 def baner_directory_path(instance, filename):
-    return f'music_band/{instance.name}/baner/{filename}'.format(filename=filename)
+    return f'music_band/{instance.musicband_name}/baner/{filename}'.format(filename=filename)
 
 
 class MusicBand(models.Model):
     likes = GenericRelation(Like)
-    name = models.CharField(max_length=100, blank=False,
-                            default='', verbose_name="Назва колективу")
+    musicband_name = models.CharField(max_length=100, blank=False,
+                                      default='', verbose_name="Назва колективу")
     music_styles = models.CharField(
         max_length=32, blank=False, default='', verbose_name="Музичний стиль")
     about_band = models.TextField(
@@ -38,10 +40,14 @@ class MusicBand(models.Model):
         max_length=128, blank=True, default='', verbose_name="Telegram")
     soundcloud_link = models.CharField(
         max_length=128, blank=True, default='', verbose_name="SoundCloud")
-    itunes_link = models.CharField(max_length=128, blank=True, default='', verbose_name=" iTunes")
-    bandcamp_link = models.CharField(max_length=128, blank=True, default='', verbose_name=" Bandcamp")
-    spotify_link = models.CharField(max_length=128, blank=True, default='', verbose_name=" Spotify")
-    tik_tok_link = models.CharField(max_length=128, blank=True, default='', verbose_name=" TikTok")
+    itunes_link = models.CharField(
+        max_length=128, blank=True, default='', verbose_name=" iTunes")
+    bandcamp_link = models.CharField(
+        max_length=128, blank=True, default='', verbose_name=" Bandcamp")
+    spotify_link = models.CharField(
+        max_length=128, blank=True, default='', verbose_name=" Spotify")
+    tik_tok_link = models.CharField(
+        max_length=128, blank=True, default='', verbose_name=" TikTok")
     mobile_number = models.CharField(
         max_length=16, blank=True, default='', verbose_name="Номер телефону")
     email_band = models.EmailField(verbose_name="Електронна пошта")
@@ -54,7 +60,7 @@ class MusicBand(models.Model):
         verbose_name_plural = "Виконавці"
 
     def __str__(self):
-        return self.name  # повертає назву колективу
+        return self.musicband_name  # повертає назву колективу
 
     @property
     def total_likes(self):
@@ -62,21 +68,21 @@ class MusicBand(models.Model):
 
 
 def songs_directory_path(instance, filename):
-    return f'music_band/{instance.artist.name}/songs/{instance.name}/{filename}'.format(filename=filename)
+    return f'music_band/{instance.musicband.musicband_name}/songs/{instance.song_name}/{filename}'.format(filename=filename)
 
 
 def songs_image_directory_path(instance, filename):
-    return f'music_band/{instance.artist.name}/songs/{instance.name}/{filename}'.format(filename=filename)
+    return f'music_band/{instance.musicband.musicband_name}/songs/{instance.song_name}/{filename}'.format(filename=filename)
 
 
 class Song(models.Model):
     likes = GenericRelation(Like)
-    name = models.CharField(max_length=100, blank=False,
-                            default='', verbose_name="Назва пісні")
-    artist = models.ForeignKey(
+    song_name = models.CharField(max_length=100, blank=False,
+                                 default='', verbose_name="Назва пісні")
+    musicband = models.ForeignKey(
         MusicBand, blank=False, on_delete=models.CASCADE, verbose_name="Виконавець", related_name="songs")
     song_url = models.FileField(
-        upload_to=songs_directory_path, blank=False, verbose_name="Пісня", help_text="Формат файлу mp3")
+        upload_to=songs_directory_path, blank=False, verbose_name="Пісня", help_text="Формат файлу mp3", validators=[FileExtensionValidator(['mp3'])])
     song_image = models.ImageField(
         upload_to=songs_image_directory_path, blank=False, verbose_name="Обкладинка пісні", )
     duration = models.CharField(
@@ -90,7 +96,7 @@ class Song(models.Model):
         verbose_name_plural = "Треки"
 
     def __str__(self):
-        return self.artist.name + ' - ' + self.name
+        return self.musicband.musicband_name + ' - ' + self.song_name
 
     def save(self, *args, **kwargs):
         if self.song_url:
@@ -106,13 +112,13 @@ class Song(models.Model):
 
 
 def album_image_directory_path(instance, filename):
-    return f'music_band/{instance.artist.name}/songs/album/{instance.name}/{filename}'.format(filename=filename)
+    return f'music_band/{instance.musicband.musicband_name}/songs/album/{instance.album_name}/{filename}'.format(filename=filename)
 
 
 class Album(models.Model):
-    name = models.CharField(max_length=100, blank=False,
-                            default='', verbose_name="Назва альбому")
-    artist = models.ForeignKey(
+    album_name = models.CharField(max_length=100, blank=False,
+                                  default='', verbose_name="Назва альбому")
+    musicband = models.ForeignKey(
         MusicBand, blank=False, on_delete=models.CASCADE, verbose_name="Виконавець")
     album_image = models.ImageField(
         upload_to=album_image_directory_path, blank=False, verbose_name="Обкладинка альбому", )
@@ -126,15 +132,15 @@ class Album(models.Model):
         verbose_name_plural = "Альбоми"
 
     def __str__(self):
-        return self.name
+        return self.album_name
 
 
 def photo_directory_path(instance, filename):
-    return f'music_band/{instance.artist}/photo/{filename}'.format(filename=filename)
+    return f'music_band/{instance.musicband}/photo/{filename}'.format(filename=filename)
 
 
 class Photo(models.Model):
-    artist = models.ForeignKey(
+    musicband = models.ForeignKey(
         MusicBand, blank=False, on_delete=models.CASCADE, verbose_name="Виконавець")
     photo = models.ImageField(
         upload_to=photo_directory_path, blank=False, verbose_name="Фото")
@@ -146,14 +152,14 @@ class Photo(models.Model):
         verbose_name_plural = "Фото"
 
     def __str__(self):
-        return self.artist.name
+        return self.musicband.musicband_name
 
 
 class Video(models.Model):
-    artist = models.ForeignKey(
+    musicband = models.ForeignKey(
         MusicBand, blank=False, on_delete=models.CASCADE, verbose_name="Виконавець")
-    name = models.CharField(max_length=100, blank=False,
-                            default='', verbose_name="Назва відео")
+    video_name = models.CharField(max_length=100, blank=False,
+                                  default='', verbose_name="Назва відео")
     video_url = models.CharField(
         max_length=100, blank=False, default='', verbose_name=" відео")
     is_published = models.BooleanField(default=True)
@@ -164,7 +170,7 @@ class Video(models.Model):
         verbose_name_plural = "Відео"
 
     def __str__(self):
-        return self.name
+        return self.video_name
 
 
 def playList_directory_path(instance, filename):

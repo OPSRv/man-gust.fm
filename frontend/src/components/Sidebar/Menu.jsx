@@ -1,6 +1,6 @@
 import React from "react";
 import { menu } from "../../fake-data/Mock-SideBar";
-import { CustomLink } from "../CustomLink";
+import CustomLink from "../CustomLink";
 import {
   Icons,
   MenuHeaderText,
@@ -25,4 +25,4 @@ const Menu = () => {
   );
 };
 
-export { Menu };
+export default Menu;

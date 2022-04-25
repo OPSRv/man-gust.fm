@@ -30,7 +30,7 @@ html{
     font-style: normal;
     font-weight: 300;
     letter-spacing: 1px;
-    background: linear-gradient( to top, #110014  10%, #531d1d 100%);
+    background: linear-gradient(to top,#28aeae 0%,#330867 100%);
   }
   a{
   color: white;
@@ -39,8 +39,8 @@ html{
 }
 `;
 export const Container = styled.div`
-  padding-top: 0;
-  padding-bottom: 20px;
+  /* padding-top: 0;
+  padding-bottom: 20px; */
   width: 100%;
   display: flex;
   flex-flow: column nowrap;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import TopLogo from "../../assets/img/Artists/ArtistDetail/logoband.jpg";
 
 export const ArtistsDetailWrapper = styled.div`
   width: 100%;
@@ -10,24 +9,27 @@ export const ArtistsLogo = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  background: no-repeat center/100% url(${TopLogo});
+  background: no-repeat center/100% url(${(props) => props.bgimage});
   width: 100%;
   opacity: 0.9;
-  img {
-    width: 40%;
-    border-radius: 50%;
-  }
 `;
 export const ArtistsLogoTextWrapper = styled.div`
   width: 70%;
   display: flex;
   align-items: center;
+  padding: 2%;
+  img {
+    width: 25%;
+    border-radius: 50%;
+  }
 `;
 
 export const ArtistsDetailText = styled.div`
   display: flex;
   flex-flow: column nowrap;
   background: #494949ae;
+  margin-left: 20px;
+  padding: 5px;
   h3 {
     margin: 0;
     font-size: calc(16px + 4 * ((100vw - 320px) / (2556 - 320)));
@@ -45,8 +47,8 @@ export const ArtistsNavBarIcons = styled.img`
   opacity: 0.8;
   border-radius: 50%;
   box-shadow: 0 0 2px ${(props) => props.shadow_center},
-      0 0 5px ${(props) => props.shadow_middle},
-      0 0 7px ${(props) => props.shadow_outside}};
+    0 0 5px ${(props) => props.shadow_middle},
+    0 0 7px ${(props) => props.shadow_outside}};
   &:active {
     transform: scale(0.9);
   }
@@ -98,8 +100,8 @@ export const ArtistsLink = styled.div`
   }
 `;
 export const ArtistsSocialLink = styled.div`
-  height: ${(props) => props.height || "0px"};
-  display: ${(props) => props.display || "none"};
+  /* height: ${(props) => props.height || "0px"}; */
+  display: ${(props) => (props.isOpen ? "flex" : "none")};
   height: 65px;
   transition: all 1s ease;
   justify-content: space-around;

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { your_collection } from "../../fake-data/Mock-SideBar";
-import { CustomLink } from "../CustomLink";
+import CustomLink from "../CustomLink";
 import {
   Icons,
   MenuHeaderText,
@@ -26,4 +26,4 @@ const YourCollection = () => {
   );
 };
 
-export { YourCollection };
+export default YourCollection;

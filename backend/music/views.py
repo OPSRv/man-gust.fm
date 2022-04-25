@@ -19,9 +19,9 @@ from rest_framework.decorators import api_view
 class MusicBandViewSet(
         ModelViewSet):
     queryset = MusicBand.objects.filter(is_published=True)
-    lookup_field = 'name'
+    lookup_field = 'musicband_name'
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['name', 'music_styles', 'likes__user']
+    filterset_fields = ['musicband_name', 'music_styles', 'likes__user']
     pagination_class = None
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
@@ -48,9 +48,9 @@ class MusicBandLikedViewSet(LikedMixin,
 
 class SongViewSet(ModelViewSet):
     queryset = Song.objects.filter(is_published=True)
-    lookup_field = 'name'
+    lookup_field = 'song_name'
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['artist__name', 'single', 'likes__user']
+    filterset_fields = ['musicband__musicband_name', 'single', 'likes__user']
     serializer_class = SongsSerializer
     pagination_class = None
     permission_classes = (IsAuthenticatedOrReadOnly, )
@@ -74,9 +74,9 @@ class SongLikedSet(LikedMixin,
 
 class AlbumViewSet(ModelViewSet):
     queryset = Album.objects.filter(is_published=True)
-    lookup_field = 'name'
+    lookup_field = 'album_name'
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['artist__name']
+    filterset_fields = ['musicband__musicband_name']
     pagination_class = None
 
     def get_serializer_class(self):
@@ -87,18 +87,18 @@ class AlbumViewSet(ModelViewSet):
 
 class VideoViewSet(ModelViewSet):
     queryset = Video.objects.filter(is_published=True)
-    lookup_field = 'name'
+    lookup_field = 'video_name'
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['artist__name']
+    filterset_fields = ['musicband__musicband_name']
     serializer_class = VideoSerializer
     pagination_class = None
 
 
 class PhotoViewSet(ModelViewSet):
     queryset = Photo.objects.filter(is_published=True)
-    lookup_field = 'artist'
+    lookup_field = 'musicband'
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['artist__name']
+    filterset_fields = ['musicband__musicband_name']
     serializer_class = PhotoSerializer
     pagination_class = None
 

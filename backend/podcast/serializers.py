@@ -11,7 +11,7 @@ class PodcastSerializer(serializers.ModelSerializer):
 
 
 class PodcastSongSerializer(serializers.ModelSerializer):
-    podcast = PodcastSerializer(read_only=True)
+    # podcast = PodcastSerializer(read_only=True)
     is_fan = SerializerMethodField()
 
     class Meta:
@@ -20,7 +20,7 @@ class PodcastSongSerializer(serializers.ModelSerializer):
         fields = ('id',
                   'podcast',
                   'release',
-                  'name',
+                  'podcast_song_name',
                   'description',
                   'cover',
                   'audio',

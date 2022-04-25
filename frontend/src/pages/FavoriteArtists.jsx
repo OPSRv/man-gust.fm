@@ -8,4 +8,4 @@ const FavoriteArtists = () => {
   );
 };
 
-export { FavoriteArtists };
+export default FavoriteArtists;

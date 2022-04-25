@@ -1,7 +1,7 @@
 import React from "react";
 import { musicBandAPI } from "../../service-function/musicBandService";
-import { Spinner } from "../Spiner/Spiner";
-import { ArtistItem } from "./ArtistItem";
+import Spinner from "../Spiner/Spiner";
+import ArtistItem from "./ArtistItem";
 import { Center, FlexColumn, ItemWrapper } from "./_ArtistsStyles";
 
 const Artists = () => {
@@ -20,7 +20,7 @@ const Artists = () => {
           {isLoading && <Spinner />}
           {error && (
             <div>
-              виникла помилка
+              виникла помилка Artists
               <button onClick={() => refetch()}>Спробувати ще раз</button>
             </div>
           )}
@@ -36,4 +36,4 @@ const Artists = () => {
   );
 };
 
-export { Artists };
+export default Artists;

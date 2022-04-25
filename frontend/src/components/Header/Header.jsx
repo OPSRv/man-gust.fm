@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomLink } from "../CustomLink";
+import CustomLink from "../CustomLink";
 import {
   InputSearch,
   InputWrapper,
@@ -23,10 +23,10 @@ const Header = () => {
       ) : ( */}
       <NavBar>
         <LinksWrapper>
-          <CustomLink to={"/"}>Музика</CustomLink>
+          <CustomLink to={"/"}>Головна</CustomLink>
           <CustomLink to={"/podcasts"}>Подкасти</CustomLink>
-          <CustomLink to={"/artist"}>Бібліотека</CustomLink>
-          <CustomLink to={"/detail"}>Радіо</CustomLink>
+          <CustomLink to={"/musicbands"}>Виконавці</CustomLink>
+          <CustomLink to={"/radio"}>Радіо</CustomLink>
         </LinksWrapper>
         <InputWrapper>
           <InputSearch type="text" />
@@ -36,4 +36,4 @@ const Header = () => {
     </>
   );
 };
-export { Header };
+export default Header;

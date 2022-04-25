@@ -7,4 +7,4 @@ const LikedSongs = () => {
   );
 };
 
-export { LikedSongs };
+export default LikedSongs;

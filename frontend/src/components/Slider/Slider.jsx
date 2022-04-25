@@ -26,4 +26,4 @@ const Slider = () => {
   );
 };
 
-export { Slider };
+export default Slider;

@@ -7,4 +7,4 @@ const PlaylistsAdmin = () => {
   );
 };
 
-export { PlaylistsAdmin };
+export default PlaylistsAdmin;

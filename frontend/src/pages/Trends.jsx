@@ -7,4 +7,4 @@ const Trends = () => {
   );
 };
 
-export { Trends };
+export default Trends;

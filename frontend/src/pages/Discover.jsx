@@ -7,4 +7,4 @@ const Discover = () => {
   );
 };
 
-export { Discover };
+export default Discover;

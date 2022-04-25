@@ -1,33 +1,19 @@
 {
-  "name": "radio-pwa",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.26.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-redux": "^8.0.0",
+    "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^2.1.3",
-    "source-map-resolve": "^0.6.0",
+    "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
-    "web-vitals": "^0.2.4",
-    "workbox-background-sync": "^5.1.4",
-    "workbox-broadcast-update": "^5.1.4",
-    "workbox-cacheable-response": "^5.1.4",
-    "workbox-core": "^5.1.4",
-    "workbox-expiration": "^5.1.4",
-    "workbox-google-analytics": "^5.1.4",
-    "workbox-navigation-preload": "^5.1.4",
-    "workbox-precaching": "^5.1.4",
-    "workbox-range-requests": "^5.1.4",
-    "workbox-routing": "^5.1.4",
-    "workbox-strategies": "^5.1.4",
-    "workbox-streams": "^5.1.4"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,7 +25,17 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ]
+    }
   },
   "browserslist": {
     "production": [

@@ -59,4 +59,4 @@ const Hamburger = () => {
   );
 };
 
-export { Hamburger };
+export default Hamburger;

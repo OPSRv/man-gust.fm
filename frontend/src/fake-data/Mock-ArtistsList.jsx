@@ -9,89 +9,89 @@ import BandLogo_7 from "../assets/img/Artists/12.jpeg";
 const ArtistsList = [
   {
     id: 1,
-    artist: "KLEFT",
+    musicband_name: "KLEFT",
     icon: `${BandLogo_2}`,
   },
   {
     id: 2,
-    artist: "Kleft",
+    musicband_name: "Kleft",
     icon: `${BandLogo_2}`,
   },
   {
     id: 3,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_3}`,
   },
   {
     id: 4,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_4}`,
   },
   {
     id: 5,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_5}`,
   },
   {
     id: 6,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_6}`,
   },
   {
     id: 7,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_7}`,
   },
   {
     id: 8,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_7}`,
   },
   {
     id: 9,
-    artist: "My Chemical Romance",
+    musicband_name: "My Chemical Romance",
     icon: `${BandLogo_2}`,
   },
   {
     id: 10,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_3}`,
   },
   {
     id: 11,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_4}`,
   },
   {
     id: 12,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_5}`,
   },
   {
     id: 13,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_6}`,
   },
   {
     id: 14,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_7}`,
   },
   {
     id: 15,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo}`,
   },
   {
     id: 16,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_3}`,
   },
   {
     id: 17,
-    artist: "Man-Gust",
+    musicband_name: "Man-Gust",
     icon: `${BandLogo_5}`,
   },
 ];
 
-export { ArtistsList };
+export default ArtistsList;

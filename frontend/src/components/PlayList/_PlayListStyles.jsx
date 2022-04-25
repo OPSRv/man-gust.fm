@@ -43,18 +43,18 @@ export const TablePlayList = styled.table`
   }
 `;
 
-export const TableHeaderWrapper = styled.span`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  h1 {
-    display: inline-block;
-    margin-left: 15%;
-  }
-`;
-
 export const Cover = styled.img`
   width: 100%;
   max-width: 70px;
   border-radius: 2px;
+`;
+export const LikeButtone = styled.img`
+  cursor: pointer;
+  opacity: 0.9;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  &:hover {
+    opacity: 1;
+  }
 `;

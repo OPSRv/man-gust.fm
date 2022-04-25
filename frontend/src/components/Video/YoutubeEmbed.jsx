@@ -6,8 +6,11 @@ const VideoResponsive = styled.div`
   min-height: 300px;
   z-index: 0;
   display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+  color: white;
   iframe {
     border-radius: 5px;
     min-width: 300px;
@@ -17,8 +20,9 @@ const VideoResponsive = styled.div`
   }
 `;
 
-const YoutubeEmbed = ({ embedId }) => (
+const YoutubeEmbed = ({ embedId, name }) => (
   <VideoResponsive>
+    <h1>{name}</h1>
     <iframe
       src={`https://www.youtube.com/embed/${embedId}`}
       frameBorder="0"
@@ -29,4 +33,4 @@ const YoutubeEmbed = ({ embedId }) => (
   </VideoResponsive>
 );
 
-export { YoutubeEmbed };
+export default YoutubeEmbed;

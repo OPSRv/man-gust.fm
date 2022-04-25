@@ -9,31 +9,35 @@ class MusicBandSerializer(ModelSerializer):
 
     class Meta:
         model = MusicBand
-        fields = ('id', 'name', 'logo', 'is_fan', 'total_likes',)
+        fields = ('id', 'musicband_name', 'logo', 'is_fan', 'total_likes',)
 
     def get_is_fan(self, obj) -> bool:
         user = self.context.get('request').user
         return likes_services.is_fan(obj, user)
 
+
 class SongsSerializer(ModelSerializer):
-    artist = MusicBandSerializer(read_only=True)
+    musicband = MusicBandSerializer(read_only=True)
     is_fan = SerializerMethodField()
 
     class Meta:
         model = Song
-        fields = ('id', 'artist', 'name', 'duration',
+        fields = ('id', 'musicband', 'song_name', 'duration',
                   'song_url', 'song_image', 'total_likes', 'is_fan',)
 
     def get_is_fan(self, obj) -> bool:
         user = self.context.get('request').user
         return likes_services.is_fan(obj, user)
 
+
 class MusicBandSerializerDetail(ModelSerializer):
     is_fan = SerializerMethodField()
+
     class Meta:
         model = MusicBand
         fields = (
-            'name',
+            'id',
+            'musicband_name',
             'music_styles',
             'about_band',
             'logo',
@@ -50,7 +54,7 @@ class MusicBandSerializerDetail(ModelSerializer):
             'mobile_number',
             'email_band',
             'is_fan', 'total_likes',
-        
+
         )
 
     def get_is_fan(self, obj) -> bool:
@@ -58,16 +62,13 @@ class MusicBandSerializerDetail(ModelSerializer):
         return likes_services.is_fan(obj, user)
 
 
-
-
-
 class SongLikedSerializer(ModelSerializer):
-    artist = MusicBandSerializer(read_only=True)
+    musicband = MusicBandSerializer(read_only=True)
     is_fan = SerializerMethodField()
 
     class Meta:
         model = Song
-        fields = ('id', 'artist', 'name', 'duration',
+        fields = ('id', 'musicband', 'song_name', 'duration',
                   'song_url', 'song_image', 'total_likes', 'is_fan',)
 
     def get_is_fan(self, obj) -> bool:
@@ -80,11 +81,10 @@ class SongLikedSerializer(ModelSerializer):
 class AlbumSerializer(ModelSerializer):
     class Meta:
         model = Album
-        fields = ('id', 'name', 'album_image')
+        fields = ('id', 'album_name', 'album_image')
 
 
 class AlbumSerializerDetail(ModelSerializer):
-    artist = MusicBandSerializer(read_only=True)
     song = SongsSerializer(read_only=True, many=True)
 
     class Meta:

@@ -10,7 +10,9 @@ from .serializers import PodcastSerializer, PodcastSongSerializer
 class PodcastViewSet(viewsets.ModelViewSet):
     queryset = Podcast.objects.filter(is_published=True)
     serializer_class = PodcastSerializer
-    lookup_field = 'name'
+    lookup_field = 'podcast_name'
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['theme']
     pagination_class = None
 
 
@@ -18,7 +20,7 @@ class PodcastSongViewSet(LikedMixin,
                          viewsets.ModelViewSet):
     queryset = PodcastSong.objects.filter(is_published=True)
     serializer_class = PodcastSongSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['podcast__name', 'name']
     pagination_class = None
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['podcast__podcast_name']
     permission_classes = (IsAuthenticatedOrReadOnly, )

@@ -27,4 +27,4 @@ const NowPlaying = () => {
   );
 };
 
-export { NowPlaying };
+export default NowPlaying;

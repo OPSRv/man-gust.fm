@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 //icons
 import BandCamp from "../../assets/svg/social/bandcamp.svg";
@@ -15,8 +14,7 @@ import Youtube from "../../assets/svg/social/youtube.svg";
 import TikTok from "../../assets/svg/social/tiktok.svg";
 import LineDown from "../../assets/svg/other/down.svg";
 //fake
-import { ArtistDetailList } from "../../fake-data/Mock-ArtistDetailList";
-import { ExternalLink } from "../ExternalLink";
+import ExternalLink from "../ExternalLink";
 //styles
 import {
   ArtistsDetailText,
@@ -28,6 +26,8 @@ import {
   ArtistsNavBarIcons,
   ArtistsSocialLink,
 } from "./_artistDetailStyles";
+
+import Spinner from "../Spiner/Spiner";
 
 const SocialLink = [
   {
@@ -51,55 +51,62 @@ const SocialLink = [
   { link: "tel: 123", icon: Telephone, color: "#ddd" },
 ];
 
-const ArtistDetailHeader = () => {
-  const [toogle, setToogle] = useState(true);
+const ArtistDetailHeader = ({ musicBandData, isLoading }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [SocialLinkDisplay, setSocialLinkDisplay] = useState("");
 
-  const ToogleSocial = () => {
-    setToogle(!toogle);
-    toogle ? setSocialLinkDisplay("") : setSocialLinkDisplay("flex");
-  };
+  // toogle ? setSocialLinkDisplay("") : setSocialLinkDisplay("flex");
 
   return (
-    <ArtistsDetailWrapper>
-      <ArtistsLogo>
-        <ArtistsLogoTextWrapper>
-          <img src={ArtistDetailList.logo} alt="" />
-          <ArtistsDetailText>
-            <h3>{ArtistDetailList.name}</h3>
-            <p>{ArtistDetailList.location}</p>
-          </ArtistsDetailText>
-        </ArtistsLogoTextWrapper>
-      </ArtistsLogo>
+    <>
+      <ArtistsDetailWrapper>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <>
+            <ArtistsLogo bgimage={musicBandData.baner}>
+              <ArtistsLogoTextWrapper>
+                <img src={musicBandData.logo} alt="" />
+                <ArtistsDetailText>
+                  <h3>{musicBandData.musicband_name}</h3>
+                  <p>{musicBandData.music_styles}</p>
+                </ArtistsDetailText>
+              </ArtistsLogoTextWrapper>
+            </ArtistsLogo>
 
-      <ArtistsLinkWrapper>
-        <ArtistsLink>
-          <div>
-            <Link to={"/detail"}>Всі пісні</Link>
-            <Link to={"single"}>Сингли</Link>
-            <Link to={"album"}>Альбоми</Link>
-            <Link to={"movies"}>Кліпи</Link>
-            <Link to={"gallery"}>Галерея</Link>
-          </div>
-          <img src={LineDown} alt="" onClick={ToogleSocial} />
-        </ArtistsLink>
+            <ArtistsLinkWrapper>
+              <ArtistsLink>
+                <div>
+                  <Link to={`/musicbands/${musicBandData.musicband_name}`}>
+                    Всі пісні
+                  </Link>
+                  <Link to={"single"}>Сингли</Link>
+                  <Link to={"album"}>Альбоми</Link>
+                  <Link to={"movies"}>Кліпи</Link>
+                  <Link to={"gallery"}>Галерея</Link>
+                </div>
+                <img src={LineDown} alt="" onClick={() => setIsOpen(!isOpen)} />
+              </ArtistsLink>
 
-        <ArtistsSocialLink display={SocialLinkDisplay}>
-          {SocialLink.map((item) => (
-            <ExternalLink to={item.link} key={item.link}>
-              <ArtistsNavBarIcons
-                src={item.icon}
-                alt="link"
-                shadow_center={item.color}
-                shadow_middle={item.color}
-                shadow_outside={item.color}
-              />
-            </ExternalLink>
-          ))}
-        </ArtistsSocialLink>
-      </ArtistsLinkWrapper>
-    </ArtistsDetailWrapper>
+              <ArtistsSocialLink isOpen={isOpen}>
+                {SocialLink.map((item) => (
+                  <ExternalLink to={item.link} key={item.link}>
+                    <ArtistsNavBarIcons
+                      src={item.icon}
+                      alt="link"
+                      shadow_center={item.color}
+                      shadow_middle={item.color}
+                      shadow_outside={item.color}
+                    />
+                  </ExternalLink>
+                ))}
+              </ArtistsSocialLink>
+            </ArtistsLinkWrapper>
+          </>
+        )}
+      </ArtistsDetailWrapper>
+    </>
   );
 };
 
-export { ArtistDetailHeader };
+export default ArtistDetailHeader;

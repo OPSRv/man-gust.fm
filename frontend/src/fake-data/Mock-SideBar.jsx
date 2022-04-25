@@ -14,24 +14,30 @@ import LogOutIcon from "../assets/svg/general/log_out.svg";
 export const menu = [
   {
     id: 1,
-    text: "Додому",
+    text: "Головна",
     icon: `${HomeIcon}`,
     url: "/",
   },
   {
     id: 2,
+    text: "Радіо",
+    icon: `${HomeIcon}`,
+    url: "/radio",
+  },
+  {
+    id: 3,
+    text: "Виконавці",
+    icon: `${LibraryIcon}`,
+    url: "/musicbands",
+  },
+  {
+    id: 4,
     text: "Тенденції",
     icon: `${TrendsIcon}`,
     url: "/trends",
   },
   {
-    id: 3,
-    text: "Бібліотека",
-    icon: `${LibraryIcon}`,
-    url: "/artist",
-  },
-  {
-    id: 4,
+    id: 5,
     text: "Відкрийте для себе",
     icon: `${DiscoverIcon}`,
     url: "/discover",

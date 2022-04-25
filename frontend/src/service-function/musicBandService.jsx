@@ -5,14 +5,39 @@ export const musicBandAPI = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://127.0.0.1:8000/api/v1/",
   }),
-  tagTypes: ["Musicbands"],
+  tagTypes: ["musicbands", "follow", "unfollow"],
   endpoints: (builder) => ({
     getMusicBands: builder.query({
       query: () => ({
-        url: `musicbands/`,
+        url: "musicbands/",
       }),
-      providesTags: (result) => ["Musicbands"],
-      // invalidatesTags: (result) => ['Musicbands'] next method is add function to add fun
+      providesTags: (result) => ["musicbands"],
+    }),
+    getMusicBandID: builder.query({
+      query: (musicband_name) => ({
+        url: `musicbands/${musicband_name}/`,
+      }),
+    }),
+    getMmusicBandFollowers: builder.query({
+      query: (id) => ({
+        url: `/musicband_like/${id}/fans/`,
+      }),
+    }),
+    musicBandFollow: builder.mutation({
+      query: (id) => ({
+        url: `musicband_like/${id}/like/`,
+        method: "POST",
+      }),
+      providesTags: (result) => ["follow"],
+      invalidatesTags: ["musicbands"],
+    }),
+    musicBandUnFollow: builder.mutation({
+      query: (id) => ({
+        url: `musicband_like/${id}/unlike/`,
+        method: "POST",
+      }),
+      providesTags: (result) => ["unfollow"],
+      invalidatesTags: ["follow"],
     }),
   }),
 });

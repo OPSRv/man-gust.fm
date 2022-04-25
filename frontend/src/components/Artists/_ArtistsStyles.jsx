@@ -16,6 +16,7 @@ export const FlexColumn = styled.div`
     margin-top: 40px;
     margin-bottom: 40px;
     margin-left: 2px;
+    cursor: pointer;
   }
 `;
 export const ItemWrapper = styled.div`

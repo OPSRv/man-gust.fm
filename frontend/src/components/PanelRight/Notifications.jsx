@@ -1,18 +1,18 @@
 import React from "react";
+//icon
+import Options from "../../assets/svg/notifications/options.svg";
 //fake
 import { NotificationsList } from "../../fake-data/Mock-NotificationsList";
 //styles
 import {
+  Icons,
+  IconsWrapper,
   Notification,
   NotificationsHeader,
-  NotificationsItemWrapper,
   NotificationsItem,
+  NotificationsItemWrapper,
   NotificationsText,
-  IconsWrapper,
-  Icons,
 } from "./_NotificationsStyles";
-//icon
-import Options from "../../assets/svg/notifications/options.svg";
 
 const Notifications = () => {
   return (
@@ -38,4 +38,4 @@ const Notifications = () => {
   );
 };
 
-export { Notifications };
+export default Notifications;

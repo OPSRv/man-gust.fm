@@ -32,4 +32,4 @@ const RecentPlaylist = () => {
   );
 };
 
-export { RecentPlaylist };
+export default RecentPlaylist;

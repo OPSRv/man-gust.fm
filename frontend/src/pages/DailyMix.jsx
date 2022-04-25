@@ -7,4 +7,4 @@ const DailyMix = () => {
   );
 };
 
-export { DailyMix };
+export default DailyMix;
