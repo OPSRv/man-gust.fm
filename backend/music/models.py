@@ -22,7 +22,7 @@ class MusicBand(models.Model):
     likes = GenericRelation(Like)
     musicband_name = models.CharField(max_length=100, blank=False,
                                       default='', verbose_name="Назва колективу")
-    music_styles = models.CharField(
+    theme = models.CharField(
         max_length=32, blank=False, default='', verbose_name="Музичний стиль")
     about_band = models.TextField(
         blank=False, default='', verbose_name="Інформація про колектив")

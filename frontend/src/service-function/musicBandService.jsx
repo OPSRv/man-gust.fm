@@ -8,8 +8,8 @@ export const musicBandAPI = createApi({
   tagTypes: ["musicbands", "follow", "unfollow"],
   endpoints: (builder) => ({
     getMusicBands: builder.query({
-      query: () => ({
-        url: "musicbands/",
+      query: (theme) => ({
+        url: `musicbands/?theme=${theme}`,
       }),
       providesTags: (result) => ["musicbands"],
     }),
@@ -42,4 +42,4 @@ export const musicBandAPI = createApi({
   }),
 });
 
-export const { useGetMusicBandAllQuery } = musicBandAPI;
+export const { useGetMusicBandsQuery } = musicBandAPI;

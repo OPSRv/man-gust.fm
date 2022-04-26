@@ -21,7 +21,7 @@ class MusicBandViewSet(
     queryset = MusicBand.objects.filter(is_published=True)
     lookup_field = 'musicband_name'
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['musicband_name', 'music_styles', 'likes__user']
+    filterset_fields = ['musicband_name', 'theme', 'likes__user']
     pagination_class = None
     permission_classes = (IsAuthenticatedOrReadOnly, )
 

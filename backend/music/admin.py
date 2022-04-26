@@ -16,7 +16,7 @@ class MusicBandAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Основна інформація', {
             'fields': ('musicband_name',
-                       'music_styles',
+                       'theme',
                        'about_band'
                        )
         }),

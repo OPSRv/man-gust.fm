@@ -9,7 +9,8 @@ class MusicBandSerializer(ModelSerializer):
 
     class Meta:
         model = MusicBand
-        fields = ('id', 'musicband_name', 'logo', 'is_fan', 'total_likes',)
+        fields = ('id', 'musicband_name', 'logo',
+                  'theme', 'is_fan', 'total_likes',)
 
     def get_is_fan(self, obj) -> bool:
         user = self.context.get('request').user
@@ -38,7 +39,7 @@ class MusicBandSerializerDetail(ModelSerializer):
         fields = (
             'id',
             'musicband_name',
-            'music_styles',
+            'theme',
             'about_band',
             'logo',
             'baner',

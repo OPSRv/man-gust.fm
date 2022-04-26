@@ -3,11 +3,11 @@ import { Center, FlexColumn } from "../components/Artists/_ArtistsStyles";
 import Spinner from "../components/Spiner/Spiner";
 import { podcastAPI } from "../service-function/podcastService";
 import PodcastItem from "./PodcastItem";
-import PodcastHashTag from "./PodcastHashTag";
+import HashTag from "../components/HashTag/HashTag";
 import { ButtonHashTag, PodcastHashTagWrapper } from "./_podcastStyles";
 
 const Podcasts = () => {
-  const [theme, setPodcastTheme] = useState("");
+  const [theme, setTheme] = useState("");
 
   const {
     data: podcasts,
@@ -15,12 +15,11 @@ const Podcasts = () => {
     isLoading,
     refetch,
   } = podcastAPI.useGetAllPodcastQuery(theme);
-
   return (
     <>
       <Center>
         <FlexColumn>
-          <h1 onClick={() => refetch(setPodcastTheme(""))}>Подкасти</h1>
+          <h1 onClick={() => refetch(setTheme(""))}>Подкасти</h1>
           {isLoading && <Spinner />}
           {error && (
             <div>
@@ -28,10 +27,7 @@ const Podcasts = () => {
               <button onClick={() => refetch(theme)}>Спробувати ще раз</button>
             </div>
           )}
-          <PodcastHashTag
-            podcasts={podcasts}
-            setPodcastTheme={setPodcastTheme}
-          />
+          <HashTag themeList={podcasts} setTheme={setTheme} />
           <PodcastItem podcasts={podcasts} />
         </FlexColumn>
       </Center>

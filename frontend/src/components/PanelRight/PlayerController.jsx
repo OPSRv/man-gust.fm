@@ -1,16 +1,15 @@
-import React from "react";
-import { useState, useEffect } from "react";
-//styled
-import { PlayerControl, VolumeControl } from "./_NowPlayingStyles";
+import React, { useEffect, useState } from "react";
 //img
 import Back from "../../assets/svg/player/back.svg";
 import Next from "../../assets/svg/player/next.svg";
-import Play from "../../assets/svg/player/play.svg";
 import Pause from "../../assets/svg/player/pause.svg";
+import Play from "../../assets/svg/player/play.svg";
 import Random from "../../assets/svg/player/random.svg";
 import Repeat from "../../assets/svg/player/repeat.svg";
 import Volume from "../../assets/svg/player/volume.svg";
 import VolumeMute from "../../assets/svg/player/volumeMute.svg";
+//styled
+import { PlayerControl, VolumeControl } from "./_NowPlayingStyles";
 
 const VolumeRange = {
   max: 1,
@@ -19,7 +18,7 @@ const VolumeRange = {
 
 const PlayerController = () => {
   const url =
-    "http://127.0.0.1:8000/media/music_band/KLEFT/songs/%D0%A2%D0%B5%D0%BC%D0%BD%D0%BE/01_-_MellRose_-_Temno.mp3";
+    "http://127.0.0.1:8000/media/music_band/KLEFT/songs/%D0%94%D0%BE%D1%89%D1%96/My_Friend_Pedro_OST_Level_2___buttercubic_stuff.mp3";
 
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);

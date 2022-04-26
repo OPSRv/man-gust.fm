@@ -17,7 +17,6 @@ import Discover from "./pages/Discover";
 import FavoriteArtists from "./pages/FavoriteArtists";
 import Library from "./pages/Library";
 import LikedSongs from "./pages/LikedSongs";
-import Local from "./pages/Local";
 import PlaylistsAdmin from "./pages/PlaylistsAdmin";
 import Podcasts from "./pages/Podcasts";
 import PodcastsDetail from "./pages/PodcastsDetail";
@@ -58,7 +57,6 @@ const AppRoutes = () => {
             <Route path="/daily-mix" element={<DailyMix />} />
             <Route path="/liked-songs" element={<LikedSongs />} />
             <Route path="/favorite" element={<FavoriteArtists />} />
-            <Route path="/local" element={<Local />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<NoMatch />} />
           </Route>

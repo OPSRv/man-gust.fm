@@ -69,7 +69,7 @@ const ArtistDetailHeader = ({ musicBandData, isLoading }) => {
                 <img src={musicBandData.logo} alt="" />
                 <ArtistsDetailText>
                   <h3>{musicBandData.musicband_name}</h3>
-                  <p>{musicBandData.music_styles}</p>
+                  <p>{musicBandData.theme}</p>
                 </ArtistsDetailText>
               </ArtistsLogoTextWrapper>
             </ArtistsLogo>

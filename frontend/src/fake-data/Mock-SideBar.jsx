@@ -7,7 +7,6 @@ import PodcastsIcon from "../assets/svg/discover/podcasts.svg";
 import DailyMixIcon from "../assets/svg/discover/dailymix.svg";
 import LikedSongsIcon from "../assets/svg/your_collection/liked_songs.svg";
 import FavoriteArtistsIcon from "../assets/svg/your_collection/favorite_artists.svg";
-import LocalIcon from "../assets/svg/your_collection/Local.svg";
 import SettingsIcon from "../assets/svg/general/settings.svg";
 import LogOutIcon from "../assets/svg/general/log_out.svg";
 
@@ -77,12 +76,6 @@ export const your_collection = [
     text: "Улюблені виконавці",
     icon: `${FavoriteArtistsIcon}`,
     url: "/favorite",
-  },
-  {
-    id: 3,
-    text: "Місцеві",
-    icon: `${LocalIcon}`,
-    url: "/local",
   },
 ];
 

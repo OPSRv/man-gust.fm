@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { musicBandAPI } from "../../service-function/musicBandService";
 import Spinner from "../Spiner/Spiner";
 import ArtistItem from "./ArtistItem";
 import { Center, FlexColumn, ItemWrapper } from "./_ArtistsStyles";
+import HashTag from "../HashTag/HashTag";
 
 const Artists = () => {
+  const [theme, setTheme] = useState("");
+
   const {
     data: musicbands,
     error,
     isLoading,
     refetch,
-  } = musicBandAPI.useGetMusicBandsQuery();
+  } = musicBandAPI.useGetMusicBandsQuery(theme);
 
   return (
     <>
       <Center>
         <FlexColumn>
-          <h1>Виконавці</h1>
+          <h1 onClick={() => refetch(setTheme(""))}>Виконавці</h1>
           {isLoading && <Spinner />}
           {error && (
             <div>
@@ -24,6 +27,7 @@ const Artists = () => {
               <button onClick={() => refetch()}>Спробувати ще раз</button>
             </div>
           )}
+          <HashTag themeList={musicbands} setTheme={setTheme} />
           <ItemWrapper>
             {musicbands &&
               musicbands.map((musicband) => (

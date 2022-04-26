@@ -1,19 +1,18 @@
 import React from "react";
 import { useParams } from "react-router";
+import Like from "../assets/svg/other/like.svg";
+import UnLike from "../assets/svg/other/unlike.svg";
+import { Center, FlexColumn } from "../components/Artists/_ArtistsStyles";
+import { LikeButtone } from "../components/PlayList/_PlayListStyles";
 import Spinner from "../components/Spiner/Spiner";
 import { podcastAPI } from "../service-function/podcastService";
 import { Container } from "../_GlobalStyle";
-import { Center, FlexColumn } from "../components/Artists/_ArtistsStyles";
 import {
-  PodcastDetail,
-  ImageWrapper,
-  TextWrapper,
   AudioWrapper,
+  ImageWrapper,
+  PodcastDetail,
+  TextWrapper,
 } from "./_podcastStyles";
-import { LikeButtone } from "../components/PlayList/_PlayListStyles";
-
-import Like from "../assets/svg/other/like.svg";
-import UnLike from "../assets/svg/other/unlike.svg";
 
 const PodcastsDetail = () => {
   const { podcast_name } = useParams();
